@@ -2,7 +2,7 @@
 \author{}
 \date{}
 
-\documentclass[11pt]{article}
+\documentclass{article}
 	\usepackage[a4paper]{geometry}
 	\usepackage[utf8]{inputenc}
 	\usepackage[T1]{fontenc}
@@ -19,17 +19,104 @@
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=0.4\textwidth]{foto}
-	\caption{De luidspreker die we gaan ontwerpen.}
+	\caption{ eVUBOX 2k15}
 	\label{fig:foto}
 \end{figure}
-\section{Introductie}
-\subsection{Doelstelling}
+\tableofcontents
+\section{Doelstelling}
 In dit labo gaan we een eerste stap in de elektronica zetten door zelf een audio versterker te maken, stap voor stap van de basiselektronica tot het finaal product. Tijdens deze opdracht gaan we ook een kijkje nemen in het brein van een ingenieursstudent elektronica wanneer die zo'n taak vervuld. 
+beginnen met basis elektronica, kennismaking met basisregels, componenten en schakelingen, naar complexere onderedelen, tot de versterker!
 
-\subsection{Wat is elektronica?}
-Iedereen weet wel iets over elektriciteit en elektronica, maar wat zijn ze nu precies? Wel, elektriciteit is een verzamelterm voor alle fysische fenomenen die te maken hebben met het bestaan en bewegen van elektrische ladingen. Een deel van elektriciteit is de elektronica, waar men specifiek elektronen gaat gebruiken om nuttige informatie te versturen, te bewerken of op te slaan. Dit doen we door netwerken van elektronische componenten te bouwen die specifieke taken uitvoeren: een audio versterker om geluid te versterker, een gsm zender/ontvanger om berichten door te sturen,\ldots
+\section{Elektronica: componenten en schakelingen}
+Elektronica is het gebruik van de beweging van elektronen om informatie te verwerkern, te versturen of op te slaan. Dit doen we door netwerken van elektronische componenten te bouwen. Elektronische componenten zijn eenvoudige bouwstenen waarmee we complexe schakelingen kunnen bouwen op zo een manier dat die specifieke taken uitvoeren: het ontvangen en versturen van berichtjes met een gsm, het afbeelden van een foto op een scherm en vele andere toepassingen die je elke dag tegenkomt. Je hebt waarschijnlijk een stuk elektronica in jouw broekzak op dit ogenblik!
 
-Als je al een beetje elektriciteit hebt bestudeerd, weet je vast en zeker dat er twee belangrijke grootheden zijn in elektriciteit : spanning en stroom. Spanning is gemeten in Volt, en stelt de elektrische potentiële energie voor tussen twee punten. Stroom is gemeten in Ampere en is een maat voor het aantal elektronen dat vloeit door een punt.
+De schematische voorstelling van elektronische componenten en een netwerk zijn te vinden in Figuur \ref{fig:component_en_schakeling}. Met pijltjes zijn de twee grootheden aangeduid die in de elektronica opperbelangrijk zijn :
+
+\begin{enumerate}
+	\item de \textbf{spanning} (of voltage) gemeten in volt [V], vaak aangeduid met de letter $V$ of $U$. Dit stelt het verschil in potentiele elektrische energie \textbf{tussen twee punten}.
+	\item de \textbf{stroom} gemeten in ampère [A], vaak aangeduid met de letter $I$. Dit stelt de verplaatsing voor van een hoeveelheid ladingen (hier elektronen) door de component per tijdseenheid.
+\end{enumerate}
+
+Stroom en spanning veranderen meestal in functie van de tijd, anders zou er natuurlijk niet veel interessants gebeuren. 
+
+\begin{figure}[hbtp]
+	\centering
+	\begin{subfigure}[b]{0.45\linewidth}
+		\centering
+		\includegraphics[width=0.8\linewidth]{componenten}
+		\caption{Elektronische componenten: een weerstand links en een diode rechts. Men spreekt van de spanning $V$ \textbf{over} de pinnen (1 en 2), en de stroom $I$ \textbf{door} de component. Let op: de zin van de pijlen heeft belang!}
+		\label{subfig:componenten}
+	\end{subfigure}
+	~
+	\begin{subfigure}[b]{0.45\linewidth}
+		\centering
+		\includegraphics[width=0.8\linewidth]{weerstandsdeler}
+		\caption{Elektronisch netwerk: een schakeling van componenten. Er is \textbf{over} elk component een spanningsval , en \textbf{door} elk component een stroom.}
+		\label{subfig:netwerk}
+	\end{subfigure}
+	\caption{Componenten en een schakeling. }
+	\label{fig:component_en_schakeling}
+\end{figure}
+ Elke component voldoet aan fysische wetten die zijn stroom en de spanning bepalen. Laten we kennismaken met die fysiche wetten, en daarna we gaan onmiddelijk ons eerste netwerk oplossen.
+
+\subsection{De weerstand}
+
+In figuur \ref{subfig:componenten} zie je een weerstand (de zaagtand). De weerstand voldoet aan de \textbf{wet van Ohm}: 
+\begin{align}
+	V &= RI
+\end{align} 
+$R$ is een eigenschap van de  weerstand die men ook elektrische weerstand noemt, het is gemeten in Ohm\footnote{Georg Simon Ohm (1787 – 1854) was een Duits wiskundige en natuurkundige, ontdekker van de wet van Ohm in 1827.} [$\Omega$]. $V$ is de spanning over de weerstand en $I$ de stroom door de weerstand. 
+
+\paragraph*{Voorbeeld:} Als we weten dat er op een zeker tijdstip een spanning van $50~V$ is over een weerstand van $200~\Omega$, dan kan men de stroom door de weerstand berekenen op de volgende manier:
+\begin{align}
+	V = RI \Leftrightarrow I = \frac{V}{R} \Leftrightarrow I = \frac{50~V}{200~\Omega}= 0,25~A
+\end{align}
+
+We gaan binnenkort wetten ontdekken van andere componenten zoals de diode in figuur \ref{subfig:componenten}.
+
+\subsection{Netwerken}
+Een netwerk is een aaneenschakeling van componenten, zoals je kan zien in figuur \ref{subfig:netwerk}. Er zijn maar twee regels die gelden voor elektrische netwerken: de wetten van Kirchoff\footnote{Gustav Robert Kirchhoff (1824–1887) was een Duits natuurkundige. Kirchhoff formuleerde zijn spanningswet en zijn stroomwet in 1845, toen hij nog een student was!  Slimme kerel!}. Samen met de fysische wetten van de componenten kan je dan alle netwerken van de wereld oplossen! Een netwerk oplossen wilt zeggen dat je alle stromen en spanningen bepaalt in dat netwerk.
+
+\paragraph*{De stroomwet van Kirchoff:} in elk knooppunt in een elektrische kring is de som van de stromen die in dat punt samenkomen gelijk aan de som van de stromen die vanuit dat punt vertrekken. Dit is voor elk knooppunt geldig, onafhankelijk van de componenten die op de takken zijn. 
+
+\paragraph*{De spanningswet van Kirchoff:} de som van de elektrische potentiaalverschillen (rekening houdend met de richting) in elke gesloten lus in een kring is gelijk aan nul. Om die te bereken tekenen we een lus met een zekere richting in het netwerk. Als de spanning in dezelfde richting gaat als de lus, dan krijgt die een positief teken. Als de spanning tegen de lus ingaat, dan krijgt die een negatief teken.
+
+\paragraph*{Voorbeelden} In figuur \ref{fig:kirchoff} zijn er voorbeelden van de twee wetten.
+
+\begin{itemize}
+	\item De stroom wet (figuur \ref{subfig:kcl}) wordt toegepast als volgt: kies een knooppunt in een netwerk. Beschouw alle takken die dat knooppunt raken, en de bijhorende stromen. Pas op, de richting van de pijlen is zeer belangrijk. Als je alle stromen optelt die \textbf{naar} het knooppunt wijzen, dan is dat gelijk aan alle stromen die \textbf{weg} van het knooppunt wijzen.
+\end{itemize}
+
+
+\begin{figure}[htbp]
+	\centering
+	\begin{subfigure}[b]{0.45\linewidth}
+		\centering
+		\includegraphics[width=0.7\textwidth]{kcl.pdf}
+		\caption{In dit knooppunt is de stroomwet van Kirchoff : $i_1 + i_4 = i_2+i_3$}
+		\label{subfig:kcl}
+	\end{subfigure}
+	~
+	\begin{subfigure}[b]{0.45\linewidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{kvl.pdf}
+		\caption{In deze lus is is de spanningswet van Kirchoff : $ + V_S - V_1 - V_2 = 0$}
+		\label{subfig:kvl}
+	\end{subfigure}
+\caption{De wetten van Kirchoff}
+\label{fig:kirchoff}
+\end{figure}
+
+\subsubsection{Regels}
+\begin{itemize}
+	\item bron uitleggen
+	\item tekening met pijltes vervoledigen
+	\item KCL, KVL, parallel en serie
+	\item weestandsdeler
+\end{itemize}
+
+\subsection{}
+
 
 \subsection{Het nut van een versterker}
 
@@ -62,20 +149,8 @@ Enkele elektronische ingenieurs zijn ons voorgeweest en hebben al een elektronis
 \end{figure}
 
 
-\subsection{Zeteloefening: KVL, KCL, de weerstand, weerstandsdeler }
-We weten dat stroom en spanning belangrijke grootheden zijn in de elektronica. Om ermee te kunnen rekenen kunnen we gebruik maken van de regels van Kirchoff \footnote{Gustav Robert Kirchhoff (1824–1887) was een Duits natuurkundige. Kirchhoff formuleerde zijn spanningswet en zijn stroomwet  in 1845, toen hij nog een student was!  Slimme kerel!}.
 
-\paragraph*{Kirchoff Current Law}
-In elk knooppunt in een elektrische kring is de som van de stromen die in dat punt samenkomen gelijk aan de som van de stromen die vanuit dat punt vertrekken.
 
-\paragraph*{Kirchoff Voltage Law}
-De som van de elektrische potentiaalverschillen (rekening houdend met de richting) in elke gesloten lus in een kring is gelijk aan nul.
-
-\paragraph*{Onze eerste component: de weerstand}
-
-\begin{align}
-	U = RI 
-\end{align}
 
 \begin{itemize}
 	\item serie

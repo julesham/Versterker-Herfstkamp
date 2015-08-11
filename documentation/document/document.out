@@ -1,9 +1,11 @@
-\BOOKMARK [1][-]{section.1}{Introductie}{}% 1
-\BOOKMARK [2][-]{subsection.1.1}{Doelstelling}{section.1}% 2
-\BOOKMARK [2][-]{subsection.1.2}{Wat is elektronica?}{section.1}% 3
-\BOOKMARK [2][-]{subsection.1.3}{Het nut van een versterker}{section.1}% 4
-\BOOKMARK [1][-]{section.2}{Ontwerp}{}% 5
-\BOOKMARK [2][-]{subsection.2.1}{Zeteloefening: KVL, KCL, de weerstand, weerstandsdeler }{section.2}% 6
-\BOOKMARK [2][-]{subsection.2.2}{Jogging: LED}{section.2}% 7
-\BOOKMARK [2][-]{subsection.2.3}{Eerste Marathon: De Transistor}{section.2}% 8
-\BOOKMARK [2][-]{subsection.2.4}{Tweede Marathon: De Opamp}{section.2}% 9
+\BOOKMARK [1][-]{section.1}{Doelstelling}{}% 1
+\BOOKMARK [1][-]{section.2}{Elektronica: componenten en schakelingen}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{De weerstand}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Netwerken}{section.2}% 4
+\BOOKMARK [3][-]{subsubsection.2.2.1}{Regels}{subsection.2.2}% 5
+\BOOKMARK [2][-]{subsection.2.3}{}{section.2}% 6
+\BOOKMARK [2][-]{subsection.2.4}{Het nut van een versterker}{section.2}% 7
+\BOOKMARK [1][-]{section.3}{Ontwerp}{}% 8
+\BOOKMARK [2][-]{subsection.3.1}{Jogging: LED}{section.3}% 9
+\BOOKMARK [2][-]{subsection.3.2}{Eerste Marathon: De Transistor}{section.3}% 10
+\BOOKMARK [2][-]{subsection.3.3}{Tweede Marathon: De Opamp}{section.3}% 11
