@@ -19,7 +19,7 @@
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=0.4\textwidth]{foto}
-	\caption{ eVUBOX 2k15}
+	\caption{ E-VUBOX 2k15}
 	\label{fig:foto}
 \end{figure}
 \tableofcontents
@@ -57,7 +57,7 @@ Stroom en spanning veranderen meestal in functie van de tijd, anders zou er natu
 	\caption{Componenten en een schakeling. }
 	\label{fig:component_en_schakeling}
 \end{figure}
- Elke component voldoet aan fysische wetten die zijn stroom en de spanning bepalen. Laten we kennismaken met die fysiche wetten, en daarna we gaan onmiddelijk ons eerste netwerk oplossen.
+ Elke component voldoet aan fysische wetten die zijn stroom en de spanning bepalen. Laten we kennismaken met die fysiche wetten, en daarna we gaan onmiddelijk ons eerste netwerk oplossen. We bekijken twee basiselementen van de elektronica: de weerstand en de spanningsbron.
 
 \subsection{De weerstand}
 
@@ -65,28 +65,58 @@ In figuur \ref{subfig:componenten} zie je een weerstand (de zaagtand). De weerst
 \begin{align}
 	V &= RI
 \end{align} 
-$R$ is een eigenschap van de  weerstand die men ook elektrische weerstand noemt, het is gemeten in Ohm\footnote{Georg Simon Ohm (1787 – 1854) was een Duits wiskundige en natuurkundige, ontdekker van de wet van Ohm in 1827.} [$\Omega$]. $V$ is de spanning over de weerstand en $I$ de stroom door de weerstand. 
+$R$ is een eigenschap van de  weerstand die men ook elektrische weerstand noemt, het is gemeten in Ohm\footnote{Georg Simon Ohm (1787 – 1854) was een Duits wiskundige en natuurkundige, ontdekker van de wet van Ohm in 1827.} [$\Omega$]. $V$ is de spanning over de weerstand en $I$ de stroom door de weerstand. Zo dadelijk volgt een voorbeeld, maar we daarvoor moeten we eerst de spanningsbron kennen. 
 
-\paragraph*{Voorbeeld:} Als we weten dat er op een zeker tijdstip een spanning van $50~V$ is over een weerstand van $200~\Omega$, dan kan men de stroom door de weerstand berekenen op de volgende manier:
+\subsection{De spanningsbron}
+
+ Een spanningsbron is een simpel elektronisch component die gehoorzaamt aan een eenvoudige wet: de spanningsbron legt de spanning over zijn pinnen vast, onafhankelijk van de rest van het netwerk. Een 9V-batterij is een voorbeeld van een spanningsbron, die de spanning over zijn pinnen vastlegt op constant $9~V$. Een spanningsbron kan een constante spanning opleggen, maar niets verbiedt dat de spanning met de tijd verandert. Beide type bronnen hebben hun eigen schematische voorstelling die je kan vinden in figuur \ref{fig:vbron}.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.1\textwidth]{spanningsbron.pdf}
+	\caption{Spanningsbronnen. Links: de spanning verandert met de tijd. Rechts: de spanning is constant.}
+	\label{fig:vbron}
+\end{figure}
+
+\subsection{Mini-netwerk}
+We gaan binnenkort wetten ontdekken van nog meer componenten, maar met onze voorlopige kennis kunnen we al volgend netwerk oplossen!
+\paragraph*{Voorbeeld:} 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.25\textwidth]{vbweerstand.pdf}
+	\caption{Voorbeeldnetwerkje.}
+	\label{fig:vbweerstand}
+\end{figure}
+
+Een spanningbron legt een spanning op van $50~V$ over een weerstand van $200~\Omega$. Men kan de stroom door de weerstand berekenen op de volgende manier:
+
 \begin{align}
-	V = RI \Leftrightarrow I = \frac{V}{R} \Leftrightarrow I = \frac{50~V}{200~\Omega}= 0,25~A
+	\text{(Wet van Ohm)}~V = RI \Leftrightarrow I = \frac{V}{R} \Leftrightarrow I = \frac{50~V}{200~\Omega}= 0,25~A
 \end{align}
 
-We gaan binnenkort wetten ontdekken van andere componenten zoals de diode in figuur \ref{subfig:componenten}.
+\paragraph*{Doe-het-zelf:} Wat is de waarde $R$ van een weerstand waarover een spanning van $V = 25~V$ is en waardoor een stroom van $I = 0.1~A$ loopt?
+\\.\dotfill \\.\dotfill \\.\dotfill 
 
+Nu we een simpel netwerk kunnen oplossen, gaan we zien hoe we grotere netwerken moeten oplossen.
 \subsection{Netwerken}
-Een netwerk is een aaneenschakeling van componenten, zoals je kan zien in figuur \ref{subfig:netwerk}. Er zijn maar twee regels die gelden voor elektrische netwerken: de wetten van Kirchoff\footnote{Gustav Robert Kirchhoff (1824–1887) was een Duits natuurkundige. Kirchhoff formuleerde zijn spanningswet en zijn stroomwet in 1845, toen hij nog een student was!  Slimme kerel!}. Samen met de fysische wetten van de componenten kan je dan alle netwerken van de wereld oplossen! Een netwerk oplossen wilt zeggen dat je alle stromen en spanningen bepaalt in dat netwerk.
+Een netwerk is een aaneenschakeling van componenten, die schematisch wordt voorgesteld zoals in figuur \ref{subfig:netwerk}. Er zijn maar twee regels die gelden voor elektrische netwerken: de wetten van Kirchoff\footnote{Gustav Robert Kirchhoff (1824–1887) was een Duits natuurkundige. Kirchhoff formuleerde zijn spanningswet en zijn stroomwet in 1845, toen hij nog een student was. Slimme kerel!}. Samen met de fysische wetten van de componenten kan je dan alle netwerken van de wereld oplossen. Een netwerk oplossen wilt zeggen dat je alle stromen en spanningen bepaalt in dat netwerk.
 
 \paragraph*{De stroomwet van Kirchoff:} in elk knooppunt in een elektrische kring is de som van de stromen die in dat punt samenkomen gelijk aan de som van de stromen die vanuit dat punt vertrekken. Dit is voor elk knooppunt geldig, onafhankelijk van de componenten die op de takken zijn. 
+\paragraph*{De spanningswet van Kirchoff:} de som van de elektrische potentiaalverschillen (rekening houdend met de richting) in elke gesloten lus in een kring is gelijk aan nul. 
 
-\paragraph*{De spanningswet van Kirchoff:} de som van de elektrische potentiaalverschillen (rekening houdend met de richting) in elke gesloten lus in een kring is gelijk aan nul. Om die te bereken tekenen we een lus met een zekere richting in het netwerk. Als de spanning in dezelfde richting gaat als de lus, dan krijgt die een positief teken. Als de spanning tegen de lus ingaat, dan krijgt die een negatief teken.
+\paragraph*{Voorbeeld}
+De stroomwet (figuur \ref{subfig:kcl}) wordt toegepast als volgt: kies een knooppunt in een netwerk. Beschouw alle takken die dat knooppunt raken, en de bijhorende stromen. Pas op, de richting van de pijlen is zeer belangrijk. Als je alle stromen optelt die \textbf{naar} het knooppunt wijzen, dan is dat gelijk aan alle stromen die \textbf{weg} van het knooppunt wijzen.
 
-\paragraph*{Voorbeelden} In figuur \ref{fig:kirchoff} zijn er voorbeelden van de twee wetten.
+\paragraph*{}
+Voor dat we spanningswet toepassen, hebben we de betkenis van het symbool \includegraphics[height=1em]{gnd.pdf} nodig. Dit symbool wordt de \textbf{grond} genoemd. Het is geen component, maar een manier aan te duiden dat alle punten met dat symbool eigenlijk verbonden zijn. Je mag dus eigenlijk een connectie tekenen tussen alle pinnen die aan de grond verbonden zijn. Er werd al gezegd dat een spanning altijd gedifinieerd is tussen twee punten. Meestal wordt de grond gebruikt als een van die twee punten, en we zeggen dat de grond op 0 V is.
 
-\begin{itemize}
-	\item De stroom wet (figuur \ref{subfig:kcl}) wordt toegepast als volgt: kies een knooppunt in een netwerk. Beschouw alle takken die dat knooppunt raken, en de bijhorende stromen. Pas op, de richting van de pijlen is zeer belangrijk. Als je alle stromen optelt die \textbf{naar} het knooppunt wijzen, dan is dat gelijk aan alle stromen die \textbf{weg} van het knooppunt wijzen.
-\end{itemize}
+\paragraph*{Voorbeeld}
+De spanningswet (figuur \ref{subfig:kvl}) vind een gesloten lus in het netwerk (vergeet niet dat alle pinnen aan grond met elkaar verbonden zijn). Teken een lus met een zekere richting in het netwerk. Schrijf de som van de spanningen rekening houdend met de volgende regels:
 
+\begin{enumerate}
+ 	\item Als de spanning in dezelfde richting gaat als de lus, dan krijgt die een positief teken.
+ 	\item Als de spanning tegen de lus ingaat, dan krijgt die een negatief teken.
+ \end{enumerate}  
 
 \begin{figure}[htbp]
 	\centering
@@ -107,18 +137,13 @@ Een netwerk is een aaneenschakeling van componenten, zoals je kan zien in figuur
 \label{fig:kirchoff}
 \end{figure}
 
-\subsubsection{Regels}
 \begin{itemize}
-	\item bron uitleggen
-	\item tekening met pijltes vervoledigen
-	\item KCL, KVL, parallel en serie
+	\item parallel en serie
 	\item weestandsdeler
 \end{itemize}
 
-\subsection{}
 
-
-\subsection{Het nut van een versterker}
+\section{Het nut van een versterker}
 
 Het doel van ons project is om een versterker te bouwen, maar waarom een versterker nodig is wordt hier kort uiteengezet. We willen muziek dat uit onze muziekspeler komt beluisteren. Meestal doen we dat met oortjes of een koptelefoon als we alleen zijn. Maar als we de muziek willen laten beluisteren door vrienden, dan moet het geluid een beetje luider.
 

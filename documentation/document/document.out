@@ -1,11 +1,11 @@
 \BOOKMARK [1][-]{section.1}{Doelstelling}{}% 1
 \BOOKMARK [1][-]{section.2}{Elektronica: componenten en schakelingen}{}% 2
 \BOOKMARK [2][-]{subsection.2.1}{De weerstand}{section.2}% 3
-\BOOKMARK [2][-]{subsection.2.2}{Netwerken}{section.2}% 4
-\BOOKMARK [3][-]{subsubsection.2.2.1}{Regels}{subsection.2.2}% 5
-\BOOKMARK [2][-]{subsection.2.3}{}{section.2}% 6
-\BOOKMARK [2][-]{subsection.2.4}{Het nut van een versterker}{section.2}% 7
-\BOOKMARK [1][-]{section.3}{Ontwerp}{}% 8
-\BOOKMARK [2][-]{subsection.3.1}{Jogging: LED}{section.3}% 9
-\BOOKMARK [2][-]{subsection.3.2}{Eerste Marathon: De Transistor}{section.3}% 10
-\BOOKMARK [2][-]{subsection.3.3}{Tweede Marathon: De Opamp}{section.3}% 11
+\BOOKMARK [2][-]{subsection.2.2}{De spanningsbron}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Mini-netwerk}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.4}{Netwerken}{section.2}% 6
+\BOOKMARK [1][-]{section.3}{Het nut van een versterker}{}% 7
+\BOOKMARK [1][-]{section.4}{Ontwerp}{}% 8
+\BOOKMARK [2][-]{subsection.4.1}{Jogging: LED}{section.4}% 9
+\BOOKMARK [2][-]{subsection.4.2}{Eerste Marathon: De Transistor}{section.4}% 10
+\BOOKMARK [2][-]{subsection.4.3}{Tweede Marathon: De Opamp}{section.4}% 11
