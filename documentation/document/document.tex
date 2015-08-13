@@ -22,22 +22,25 @@
 	\caption{E-VUBOX 2k15}
 	\label{fig:foto}
 \end{figure}
+
 \tableofcontents
+
 \section{Doelstelling}
 In dit labo gaan we een eerste stap in de elektronica zetten door zelf een audio versterker te maken, stap voor stap van de basiselektronica tot het finaal product. Tijdens deze opdracht gaan we ook een kijkje nemen in het brein van een ingenieursstudent elektronica wanneer die zo'n taak vervuld. 
 We gaan beginnen met een inleiding in de elektronica, kennismaking met basisregels, componenten en schakelingen, naar complexere onderdelen, tot de versterker!
+
+Elektronica kan interessant zijn om te bestuderen omdat veel leuke en/of nuttige objecten mogelijk zijn omwille van elektronica. Alledaagse objecten zoals een GSM of een computer bevatten veel elektronica. In de ziekenhuis kan je ook allerhande toestellen vinden die dagelijkes levens redden. In de entertainment wereld vind je elektronica terug in cameras, schermen en spelconsoles. Veel geavanceerde objecten zoals zelfrijdende autos, vliegtuigen, straaljagers en automatische robots in fabrieken zouden niet mogelijk zijn zonder de elektronica. 
+
 
 Als stromen, spanningen, de wet van Ohm en de wetten van Kirchhoff geen bekende concepten zijn, volgt hier een overzicht van de wonderlijke wereld van de elektronica met alles wat je moet weten. Indien je al een basis hebt in elektronica, mag je het deel ``Elektronica: componenten en schakelingen'' snel overlopen en onmiddellijk beginnen met hoofdstuk \ref{sec:bouwstenen} op pagina \pageref{sec:bouwstenen}. 
 
 \section{Elektronica: componenten en schakelingen}
 Elektronica is het gebruik van de beweging van elektronen om informatie te verwerken, te versturen of op te slaan. Dit doen we door netwerken van elektronische componenten te bouwen. Elektronische componenten zijn eenvoudige bouwstenen waarmee we complexe schakelingen kunnen bouwen op zo een manier dat die specifieke taken uitvoeren: het ontvangen en versturen van berichtjes met een gsm, het afbeelden van een foto op een scherm en vele andere toepassingen die je elke dag tegenkomt. Je hebt waarschijnlijk een stuk elektronica in jouw broekzak op dit ogenblik!
 
-GSM, AUTOMATIC CARS, HEALTCARE, PS4, etc..
-
 De schematische voorstelling van elektronische componenten en een netwerk zijn te vinden in Figuur \ref{fig:component_en_schakeling}. Met pijltjes zijn de twee grootheden aangeduid die in de elektronica opperbelangrijk zijn :
 
 \begin{enumerate}
-	\item de \textbf{spanning} (ook voltage of potentiaal genoemd) gemeten in volt [V], vaak aangeduid met de letter $V$ of $U$. Dit stelt het verschil in potentiële elektrische energie \textbf{tussen twee punten}.
+	\item de \textbf{spanning} (ook voltage of potentiaal genoemd) gemeten in volt [V], vaak aangeduid met de letter $V$ of $U$. Dit stelt het verschil in potentiële elektrische energie \textbf{tussen twee punten} \footnote{Je kent al een maat voor het verschil in potientiële gravitationele energie: de hoogte in meter. Zoals een bal valt van hoog naar laag, gaat een positieve lading lopen van een hoge spanning naar een lage spanning.}.
 	\item de \textbf{stroom} gemeten in ampère [A], vaak aangeduid met de letter $I$. Dit stelt de verplaatsing voor van een hoeveelheid ladingen (hier elektronen) door de component per tijdseenheid.
 \end{enumerate}
 
@@ -70,11 +73,11 @@ Stroom en spanning veranderen meestal in functie van de tijd, anders zou er natu
 
 \subsection{De weerstand}
 
-In figuur \ref{subfig:componenten} zie je een weerstand (de zaagtand). De weerstand voldoet aan de \textbf{wet van Ohm}: 
+In figuur \ref{subfig:componenten} zie je de schematische voorstelling van een weerstand. Een weerstand is een geleider die voldoet aan de \textbf{wet van Ohm}: 
 \begin{align}
 	V &= R \cdot I
 \end{align} 
-$R$ is een eigenschap van de  weerstand die men ook elektrische weerstand noemt, het is gemeten in Ohm\footnote{Georg Simon Ohm (1787 - 1854) was een Duits wiskundige en natuurkundige, ontdekker van de wet van Ohm in 1827.} [$\Omega$]. $V$ is de spanning over de weerstand en $I$ de stroom door de weerstand. 
+$R$ is een eigenschap van de  weerstand die men ook elektrische weerstand noemt, het is gemeten in Ohm\footnote{Georg Simon Ohm (1787 - 1854) was een Duits wiskundige en natuurkundige, ontdekker van de wet van Ohm in 1827.} [$\Omega$]. $V$ is de spanning over de weerstand en $I$ de stroom door de weerstand.
 
 Een weerstand kan je zien als een belemmer van stroom: om door een grote weerstand een hoge stroom te laten vloeien moet je een grote spanning aanleggen. Met een kleine weerstand voldoet een kleine spanning om een grote stroom te hebben. 
 
@@ -85,14 +88,17 @@ Zo dadelijk volgt een voorbeeld, we gaan eerst zien wat weerstanden in serie en 
 Soms kan je twee weerstanden door een weerstand vervangen als ze speciaal samenzitten, dat kan het ontwerpen gemakkelijker maken. Dit kan in twee gevallen (zie figuur \ref{fig:serie_en_parallel}):
 
 \begin{itemize}
-	\item twee weerstanden zijn \textbf{in serie}: ze hebben één gemeenschappelijke pin, dan is de vervangingsweerstand :
+	\item twee weerstanden zijn \textbf{in serie}: ze hebben één gemeenschappelijke pin, en dezelfde stroom vloeit door de twee weerstanden, dan is de vervangingsweerstand :
 	\begin{align}
 		R_{v} = R_1 +R_2.
 	\end{align}
-	\item twee weerstanden staan \textbf{parallel}: de twee weerstanden hebben beide pinnen gemeenschappelijk. Dan geldt voor de vervangingsweerstand 
+	Door weerstanden in serie te plaatsen, krijg je dus een grotere weerstand.
+
+	\item twee weerstanden staan \textbf{parallel}: de twee weerstanden hebben beide pinnen gemeenschappelijk, dus de spanning over de twee is dezelfde. Dan geldt voor de vervangingsweerstand 
 	\begin{align}
 		\frac{1}{R_{v}}= \frac{1}{R_{1}} + \frac{1}{R_{2}} 
 	\end{align}
+	Door weerstanden in parallel te plaatsen, krijg je een kleine weerstand.
 \end{itemize}
 
 \begin{figure}[hbtp]
@@ -231,24 +237,24 @@ Inderdaad, de luidspreker heeft meer `schwung' nodig om luid muziek af te spelen
 
 Nu dat we weten waarom onz netwerk nuttig is, kunnen we aan de bouw van onze versterker beginnen!
 
-\subsection{De volumeknop: de weerstandsdeler}
+\subsection{De volumeknop: de spanningsdeler}
 
-Zoals al eerder vermeld, is voor de rest van het elektronisch netwerk een microfoon gelijk aan een spanningsbron. Stel dat we in serie met die spanningsbron twee weerstanden schakelt (figuur \ref{fig:volume}). We gaan aantonen de spanning $V_2$ een verkleinde versie is van het muzieksignaal $V_s$.
+Zoals al eerder vermeld, is voor de rest van het elektronisch netwerk een microfoon gelijk aan een spanningsbron. Stel dat we in serie met die spanningsbron twee weerstanden schakelt (figuur \ref{fig:volume}), dan hebben we een zogenaamde \textbf{spanningsdeler} gebouwd. We gaan aantonen de spanning $V_2$ een verkleinde versie is van het muzieksignaal $V_s$.
 
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=0.4\textwidth]{weerstandsdeler}
-	\caption{Volumeregeling: de weerstandsdeler}
+	\caption{Volumeregeling: de spannignsdeler}
 	\label{fig:volume}
 \end{figure}
 
-\paragraph*{Doe-het-zelf:} probeer een formule te vinden voor $V_2$ waar alleen de weerstandwaarden $R_1$ en $R_2$ en de spanning $V_s$ in voorkomt. 
-\textbf{Tips:} bereken eerst de stroom $I_2$ door gebruik te maken van de formule voor weerstanden in serie. Gebruik dan de wet van Ohm de spanning $V_2$ te berekenen.
+De stroom in heel het circuit is dezelfde ($I_s = I_1 = I_2$). We kunnen die stroom berekenen door twee weerstanden de vervangen door hun serie-weerstand, 
+
 \\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill 
 
 \subsection{De aan/uit LED: de diode}
-\subsection{De versterker: de transistor}
 
+\subsection{De versterker: de transistor}
 
 
 % \section{Het nut van een versterker}

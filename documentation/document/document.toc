@@ -1,11 +1,11 @@
 \select@language {dutch}
 \contentsline {section}{\numberline {1}Doelstelling}{1}{section.1}
 \contentsline {section}{\numberline {2}Elektronica: componenten en schakelingen}{2}{section.2}
-\contentsline {subsection}{\numberline {2.1}De weerstand}{2}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.1}De weerstand}{3}{subsection.2.1}
 \contentsline {subsubsection}{\numberline {2.1.1}Serie en parallel}{3}{subsubsection.2.1.1}
 \contentsline {subsection}{\numberline {2.2}De spanningsbron}{4}{subsection.2.2}
 \contentsline {subsection}{\numberline {2.3}Mini-netwerk}{4}{subsection.2.3}
-\contentsline {subsection}{\numberline {2.4}Netwerken}{4}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.4}Netwerken}{5}{subsection.2.4}
 \contentsline {section}{\numberline {3}Bouwstenen van de E-VUBOX}{6}{section.3}
 \contentsline {subsection}{\numberline {3.1}Versterken van audio}{6}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}De volumeknop: de weerstandsdeler}{7}{subsection.3.2}

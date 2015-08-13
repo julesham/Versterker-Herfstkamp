@@ -131,6 +131,8 @@ INPUT /usr/local/texlive/2013/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7
 OUTPUT /Users/juleshammenecker/Documents/Dropbox/Versterker/documentation/document/document.toc
 INPUT /usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/local/texlive/2013/texmf-dist/fonts/tfm/jknappen/ec/ecrm0700.tfm
+INPUT /usr/local/texlive/2013/texmf-dist/fonts/tfm/jknappen/ec/ecrm0800.tfm
+INPUT /usr/local/texlive/2013/texmf-dist/fonts/tfm/jknappen/ec/ecrm0600.tfm
 INPUT /usr/local/texlive/2013/texmf-dist/fonts/tfm/jknappen/ec/ecrm0500.tfm
 INPUT /Users/juleshammenecker/Documents/Dropbox/Versterker/documentation/document/./figs/componenten.pdf
 INPUT ./figs/componenten.pdf
@@ -145,8 +147,6 @@ INPUT /Users/juleshammenecker/Documents/Dropbox/Versterker/documentation/documen
 INPUT ./figs/weerstandsdeler.pdf
 INPUT ./figs/weerstandsdeler.pdf
 INPUT /usr/local/texlive/2013/texmf-dist/fonts/tfm/jknappen/ec/ecbx1200.tfm
-INPUT /usr/local/texlive/2013/texmf-dist/fonts/tfm/jknappen/ec/ecrm0800.tfm
-INPUT /usr/local/texlive/2013/texmf-dist/fonts/tfm/jknappen/ec/ecrm0600.tfm
 INPUT /usr/local/texlive/2013/texmf-dist/tex/latex/base/omscmr.fd
 INPUT /usr/local/texlive/2013/texmf-dist/tex/latex/base/omscmr.fd
 INPUT /Users/juleshammenecker/Documents/Dropbox/Versterker/documentation/document/./figs/serie.pdf
