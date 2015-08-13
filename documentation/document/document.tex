@@ -232,30 +232,103 @@ Om de muziek te kunnen horen moeten we de spanningsgolf terug omzetten naar een 
 Inderdaad, de luidspreker heeft meer `schwung' nodig om luid muziek af te spelen. Om dat te doen moeten we het \textbf{elektrisch vermogen} over de luidspreker groot houden. Het elektrisch vermogen dat een component verbruikt wordt berekend als volgt:
 \begin{align}
      P = V \cdot I
+     \label{eq:vermogen}
  \end{align} 
+
  met $P$ het vermogen in Watt, $V$ het voltage over de component en $I$ de stroom door de component. We moeten door de luidspreker dus veel stroom en een hoge spanning aanleggen (X). Dat is net de bedoeling van een versterker.
 
 Nu dat we weten waarom onz netwerk nuttig is, kunnen we aan de bouw van onze versterker beginnen!
 
 \subsection{De volumeknop: de spanningsdeler}
 
-Zoals al eerder vermeld, is voor de rest van het elektronisch netwerk een microfoon gelijk aan een spanningsbron. Stel dat we in serie met die spanningsbron twee weerstanden schakelt (figuur \ref{fig:volume}), dan hebben we een zogenaamde \textbf{spanningsdeler} gebouwd. We gaan aantonen de spanning $V_2$ een verkleinde versie is van het muzieksignaal $V_s$.
+We hebben de muziek dus omgevormd naar een spannings-signaal. Stel dat $V_s$ ons muzieksignaal is, en dat we in serie met die spanningsbron twee weerstanden schakelen (figuur \ref{fig:volume}), dan hebben we een zogenaamde \textbf{spanningsdeler} gebouwd. We gaan aantonen de spanning $V_2$ een verkleinde versie is van het muzieksignaal $V_s$. Dit is handig als het geluid te luid is, en dat we het volume willen regelen.
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.4\textwidth]{weerstandsdeler}
+	\includegraphics[width=0.3\textwidth]{weerstandsdeler}
 	\caption{Volumeregeling: de spannignsdeler}
 	\label{fig:volume}
 \end{figure}
 
-De stroom in heel het circuit is dezelfde ($I_s = I_1 = I_2$). We kunnen die stroom berekenen door twee weerstanden de vervangen door hun serie-weerstand, 
+Met de stroomwet van Kirchhof kunnen we zien dat alle stromen in het circuit gelijk zijn ($I_s = I_1 = I_2$). We kunnen die stroom berekenen door twee weerstanden de vervangen door hun serie-weerstand, en de stroom door de serieweerstand uit te drukken:
 
-\\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill 
+\begin{align}
+I_2 = \frac{V_s}{R_1+R_2}	
+\end{align}
+
+We gebruiken dan de wet van Ohm om $V_2$ te vinden:
+\begin{align}
+    V_2 = R_2 \cdot I_2 = \frac{R_2}{R_1+R_2}V_s
+\end{align}
+
+Je kan zien dat de spanning $V_2$, die we de uitgangsspanning noemen, altijd kleiner is dan (of gelijk aan) de ingangsspanning $V_s$. Daarom noemen we dit een spanningsdeler.
+\paragraph*{Doe-het-zelf:} Je heb een voltage van $9$ V als ingangspanning, en je wilt een voltage van $1.5$ V als uitgangspanning. $R_1$ is al gekozen en heeft een weerstand van $1$ k$\Omega$ ($1000 \Omega$). \marginpar{waardes gebruiken die later nuttig gaan zijn voor transistor.} Welke waarde moet je kiezen voor $R_2$?
+\\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill \\
+
+In de praktijk wordt een spanningdeler vaak met een regelbare weerstand gemaakt (zie figuur \ref{subfig:regelbareR}), zodat de verhouding tussen de in- en uitgangsspanning kan veranderd worden. In figuur \ref{subfig:pot} zie je een \textbf{potentiometer}, dat is een regelbare spanningsdeler. Het is eigenlijk een regelbare weerstand die je in het midden kan aftakken, en dat vormt een spanningsdeler omdat boven de aftakking een weerstand is, en eronder ook.
+
+We gaan een potentiometer gebruiken als volumeknop! Omdat je een potentiometer volledig kunt toedraait of opendraaien, maak de grootte van de weerstand niets uit voor de spannigsverhouding, je kan van een verhouding van 0 tot 1 gaan. Maar wat wel belangrijk is, is dat er niet te veel stroom door de potentiometer vloeit, want anders wordt er vermogen gebruikt door de volumeknop en gaan onze batterij zeer snel plat zijn. 
+
+\paragraph*{Doe-het-zelf:} Welke grootte moet de potentiometer hebben, wetend dat de ingangsspanning $200$ mV is en we het vermogen willen beperken to 4 $\mu$W ( = $4 \cdot 10^{-6}$ W)? \textbf{Tip:} De formule voor elektrisch vermogen kan je vinden op pagina \pageref{eq:vermogen}.
+\\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill \\
+
+En zo is onze eerst deel van onze versterker ontworpen! Laten we verder gaan met de aan/uit knop, zodat we snel naar de versterking kunnen gaan.
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.45\linewidth}
+		\centering
+		\includegraphics[width=0.5\textwidth]{regelbareR}
+		\caption{Spanningsdeler met een regelbare weerstand (weerstand met een pijltje).}
+		\label{subfig:regelbareR}
+	\end{subfigure}
+	~
+	\begin{subfigure}[b]{0.45\linewidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{potentiometer.pdf}
+		\caption{Spanningsdeler met een potentiometer.}
+		\label{subfig:pot}
+	\end{subfigure}
+\caption{Types spanningsdelers.}
+\label{fig:vdeler} 
+\end{figure}
 
 \subsection{De aan/uit LED: de diode}
+Een handig onderdeel op veel elektronische toestellen is het LED-lampje dat brandt om aan te geven dat het toestal aan is. LED staat voor Light Emitting Diode, lichtgevende diode\footnote{Er bestaan ook niet-lichtgevende diodes.}. Laten we eens kennismaken met de diode\ldots 
+Een diode (figuur \ref{fig:diode}) is een heel belangrijke en nuttige elektronische component, die alleen stroom doorlaat in één richting.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.1\textwidth]{diode}
+	\caption{Een diode met voorwaarte spanning $U_d$ en stroom $I_D$. De diode laat alleen stroom toe in de  positieve stroomriching (richting van de stroompijl).}
+	\label{fig:diode}
+\end{figure}
+
+Wanneer een stroom loop door de diode, ontstaat een voorwaarte spanning over de diode. In figuur \ref{fig:diode_grafiek} zie de grafiek van de stroom in functie van de spanning van de diode de we gaan gebruiken in onze versterker. In tegenstelling met de weerstand is de fysische wet van de diode niet-linear (= het is geen rechte), het is een exponentiële functie.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.3\textwidth]{diode_grafiek}
+	\caption{Grafiek van de stroom in functie van de spanning van een diode.}
+	\label{fig:diode_grafiek}
+\end{figure}
+
+Omdat rekenen met een exponentiële functie onhandig is, gaat een ingenieursstudent meestal eerst proberen om zich te redden met alleen de grafiek. We gaan een circuit oplossen zonder de die moeilijke functie te gebruiken.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.5\textwidth]{diode_netwerk}
+	\caption{Diode netwerk.}
+	\label{fig:diode_netwerk}
+\end{figure}
+\marginpar{verander i2 door iR}
+
+\begin{itemize}
+	\item 20 mA omdat leuk lichtje
+	\item komt overeen met 2.1 V
+	\item moeten we zorgen dat rest van spanning over weerstand
+	\item bereken de weerstand die nodig is.
+\end{itemize}
 
 \subsection{De versterker: de transistor}
-
 
 % \section{Het nut van een versterker}
 
