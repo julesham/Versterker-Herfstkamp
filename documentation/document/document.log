@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.12.19)  13 AUG 2015 16:59
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.12.19)  14 AUG 2015 16:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -392,12 +392,12 @@ Package babel Info: Redefining dutch shorthand "|
 (babel)             in language  on input line 37.
 Package babel Info: Redefining dutch shorthand "~
 (babel)             in language  on input line 37.
-<./figs/componenten.pdf, id=80, 76.70149pt x 37.15872pt>
+<./figs/componenten.pdf, id=81, 76.70149pt x 37.15872pt>
 File: ./figs/componenten.pdf Graphic file (type pdf)
 <use ./figs/componenten.pdf>
 Package pdftex.def Info: ./figs/componenten.pdf used on input line 58.
 (pdftex.def)             Requested size: 150.57086pt x 72.95813pt.
-<./figs/weerstandsdeler.pdf, id=81, 77.83339pt x 53.20293pt>
+<./figs/weerstandsdeler.pdf, id=82, 77.83339pt x 53.20293pt>
 File: ./figs/weerstandsdeler.pdf Graphic file (type pdf)
 <use ./figs/weerstandsdeler.pdf>
 Package pdftex.def Info: ./figs/weerstandsdeler.pdf used on input line 65.
@@ -425,12 +425,12 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 91.
-<./figs/serie.pdf, id=104, 73.68692pt x 65.84795pt>
+<./figs/serie.pdf, id=106, 73.68692pt x 65.84795pt>
 File: ./figs/serie.pdf Graphic file (type pdf)
 <use ./figs/serie.pdf>
 Package pdftex.def Info: ./figs/serie.pdf used on input line 108.
 (pdftex.def)             Requested size: 94.10643pt x 84.10321pt.
-<./figs/parallel.pdf, id=105, 100.16617pt x 48.45702pt>
+<./figs/parallel.pdf, id=107, 100.16617pt x 48.45702pt>
 File: ./figs/parallel.pdf Graphic file (type pdf)
 <use ./figs/parallel.pdf>
 Package pdftex.def Info: ./figs/parallel.pdf used on input line 115.
@@ -439,7 +439,7 @@ Package babel Info: Redefining dutch shorthand "|
 (babel)             in language  on input line 123.
 Package babel Info: Redefining dutch shorthand "~
 (babel)             in language  on input line 123.
-<./figs/spanningsbron.pdf, id=106, 44.57628pt x 35.33395pt>
+<./figs/spanningsbron.pdf, id=108, 44.57628pt x 35.33395pt>
 File: ./figs/spanningsbron.pdf Graphic file (type pdf)
 <use ./figs/spanningsbron.pdf>
 Package pdftex.def Info: ./figs/spanningsbron.pdf used on input line 127.
@@ -461,7 +461,7 @@ Package babel Info: Redefining dutch shorthand "|
 (babel)             in language  on input line 134.
 Package babel Info: Redefining dutch shorthand "~
 (babel)             in language  on input line 134.
-<./figs/vbweerstand.pdf, id=138, 81.18172pt x 34.84436pt>
+<./figs/vbweerstand.pdf, id=139, 81.18172pt x 34.84436pt>
 File: ./figs/vbweerstand.pdf Graphic file (type pdf)
 <use ./figs/vbweerstand.pdf>
 Package pdftex.def Info: ./figs/vbweerstand.pdf used on input line 139.
@@ -491,17 +491,17 @@ Package babel Info: Redefining dutch shorthand "|
 (babel)             in language  on input line 154.
 Package babel Info: Redefining dutch shorthand "~
 (babel)             in language  on input line 154.
-<./figs/gnd.pdf, id=182, 9.35027pt x 7.81586pt>
+<./figs/gnd.pdf, id=183, 9.35027pt x 7.81586pt>
 File: ./figs/gnd.pdf Graphic file (type pdf)
 <use ./figs/gnd.pdf>
 Package pdftex.def Info: ./figs/gnd.pdf used on input line 164.
 (pdftex.def)             Requested size: 11.96086pt x 9.99756pt.
-<./figs/kcl.pdf, id=184, 236.23257pt x 230.03441pt>
+<./figs/kcl.pdf, id=185, 236.23257pt x 230.03441pt>
 File: ./figs/kcl.pdf Graphic file (type pdf)
 <use ./figs/kcl.pdf>
 Package pdftex.def Info: ./figs/kcl.pdf used on input line 178.
 (pdftex.def)             Requested size: 131.74843pt x 128.29538pt.
-<./figs/kvl.pdf, id=185, 90.64397pt x 58.12228pt>
+<./figs/kvl.pdf, id=186, 90.64397pt x 58.12228pt>
 File: ./figs/kvl.pdf Graphic file (type pdf)
 <use ./figs/kvl.pdf>
 Package pdftex.def Info: ./figs/kvl.pdf used on input line 185.
@@ -535,7 +535,7 @@ Package babel Info: Redefining dutch shorthand "~
 
 pdfTeX warning: pdflatex (file ./figs/kvl.pdf): PDF inclusion: multiple pdfs wi
 th page group included in a single page
->] <./figs/micro.pdf, id=237, 230.6115pt x 67.00902pt>
+>] <./figs/micro.pdf, id=238, 230.6115pt x 67.00902pt>
 File: ./figs/micro.pdf Graphic file (type pdf)
 <use ./figs/micro.pdf>
 Package pdftex.def Info: ./figs/micro.pdf used on input line 225.
@@ -549,88 +549,83 @@ File: ./figs/weerstandsdeler.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./figs/weerstandsdeler.pdf used on input line 248.
 (pdftex.def)             Requested size: 125.47737pt x 85.77504pt.
 Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 262.
+(babel)             in language  on input line 265.
 Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 262.
+(babel)             in language  on input line 265.
 Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 262.
+(babel)             in language  on input line 265.
 Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 262.
+(babel)             in language  on input line 265.
 [7 <./figs/micro.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 265--265
+Underfull \hbox (badness 10000) in paragraph at lines 267--269
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 273--273
 []\T1/cmr/m/n/10 waardes ge-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 265--265
+Underfull \hbox (badness 10000) in paragraph at lines 273--273
 \T1/cmr/m/n/10 brui-ken die
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 265--265
+Underfull \hbox (badness 10000) in paragraph at lines 273--273
 \T1/cmr/m/n/10 la-ter nut-tig
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 265--267
+Underfull \hbox (badness 10000) in paragraph at lines 273--275
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 272--274
+Underfull \hbox (badness 10000) in paragraph at lines 282--284
 
  []
 
-<./figs/regelbareR.pdf, id=385, 65.66806pt x 53.20293pt>
+Package babel Info: Redefining dutch shorthand "|
+(babel)             in language  on input line 284.
+Package babel Info: Redefining dutch shorthand "~
+(babel)             in language  on input line 284.
+Package babel Info: Redefining dutch shorthand "|
+(babel)             in language  on input line 284.
+Package babel Info: Redefining dutch shorthand "~
+(babel)             in language  on input line 284.
+[8] <./figs/regelbareR.pdf, id=399, 65.66806pt x 53.20293pt>
 File: ./figs/regelbareR.pdf Graphic file (type pdf)
 <use ./figs/regelbareR.pdf>
-Package pdftex.def Info: ./figs/regelbareR.pdf used on input line 280.
+Package pdftex.def Info: ./figs/regelbareR.pdf used on input line 293.
 (pdftex.def)             Requested size: 94.10643pt x 76.24683pt.
-<./figs/potentiometer.pdf, id=386, 82.95488pt x 31.26997pt>
+<./figs/potentiometer.pdf, id=400, 82.95488pt x 31.26997pt>
 File: ./figs/potentiometer.pdf Graphic file (type pdf)
 <use ./figs/potentiometer.pdf>
-Package pdftex.def Info: ./figs/potentiometer.pdf used on input line 287.
+Package pdftex.def Info: ./figs/potentiometer.pdf used on input line 300.
 (pdftex.def)             Requested size: 150.57086pt x 56.75873pt.
 Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 295.
+(babel)             in language  on input line 308.
 Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 295.
-<./figs/diode.pdf, id=389, 21.96916pt x 39.85619pt>
+(babel)             in language  on input line 308.
+<./figs/diode.pdf, id=403, 21.96916pt x 39.85619pt>
 File: ./figs/diode.pdf Graphic file (type pdf)
 <use ./figs/diode.pdf>
-Package pdftex.def Info: ./figs/diode.pdf used on input line 300.
-(pdftex.def)             Requested size: 41.82791pt x 75.88441pt.
-Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 304.
-Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 304.
-Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 304.
-Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 304.
-[8] <./figs/diode_grafiek.pdf, id=400, 107.37184pt x 83.44366pt>
+Package pdftex.def Info: ./figs/diode.pdf used on input line 315.
+(pdftex.def)             Requested size: 37.642pt x 68.29037pt.
+<./figs/diode_grafiek.pdf, id=404, 101.02283pt x 83.44366pt>
 File: ./figs/diode_grafiek.pdf Graphic file (type pdf)
 <use ./figs/diode_grafiek.pdf>
-Package pdftex.def Info: ./figs/diode_grafiek.pdf used on input line 309.
-(pdftex.def)             Requested size: 125.47737pt x 97.5179pt.
-<./figs/diode_netwerk.pdf, id=401, 92.80435pt x 53.57877pt>
-File: ./figs/diode_netwerk.pdf Graphic file (type pdf)
-<use ./figs/diode_netwerk.pdf>
-Package pdftex.def Info: ./figs/diode_netwerk.pdf used on input line 318.
-(pdftex.def)             Requested size: 209.12683pt x 120.74403pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 322--322
-[]\T1/cmr/m/n/10 verander i2
- []
-
+Package pdftex.def Info: ./figs/diode_grafiek.pdf used on input line 322.
+(pdftex.def)             Requested size: 150.57086pt x 124.37703pt.
 Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 326.
+(babel)             in language  on input line 330.
 Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 326.
+(babel)             in language  on input line 330.
 Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 326.
+(babel)             in language  on input line 330.
 Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 326.
+(babel)             in language  on input line 330.
 [9 <./figs/regelbareR.pdf> <./figs/potentiometer.pdf
 
 pdfTeX warning: pdflatex (file ./figs/potentiometer.pdf): PDF inclusion: multip
@@ -643,39 +638,86 @@ with page group included in a single page
 
 pdfTeX warning: pdflatex (file ./figs/diode_grafiek.pdf): PDF inclusion: multip
 le pdfs with page group included in a single page
->]
+>] <./figs/diode_netwerk.pdf, id=445, 92.80435pt x 53.57877pt>
+File: ./figs/diode_netwerk.pdf Graphic file (type pdf)
+<use ./figs/diode_netwerk.pdf>
+Package pdftex.def Info: ./figs/diode_netwerk.pdf used on input line 335.
+(pdftex.def)             Requested size: 125.47737pt x 72.44675pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 345--347
+
+ []
+
 Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 331.
+(babel)             in language  on input line 353.
 Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 331.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 384.
+(babel)             in language  on input line 353.
+<./figs/transistor.pdf, id=449, 57.27632pt x 88.83702pt>
+File: ./figs/transistor.pdf Graphic file (type pdf)
+<use ./figs/transistor.pdf>
+Package pdftex.def Info: ./figs/transistor.pdf used on input line 363.
+(pdftex.def)             Requested size: 47.0532pt x 72.9837pt.
+<./figs/transistor_VI.pdf, id=450, 156.9942pt x 141.53955pt>
+File: ./figs/transistor_VI.pdf Graphic file (type pdf)
+<use ./figs/transistor_VI.pdf>
+Package pdftex.def Info: ./figs/transistor_VI.pdf used on input line 370.
+(pdftex.def)             Requested size: 131.74843pt x 118.78441pt.
 Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 384.
+(babel)             in language  on input line 379.
 Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 384.
+(babel)             in language  on input line 379.
 Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 384.
+(babel)             in language  on input line 379.
 Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 384.
+(babel)             in language  on input line 379.
 [10 <./figs/diode_netwerk.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 384.
+Missing character: There is no ± in font cmr10!
+
+Underfull \hbox (badness 10000) in paragraph at lines 409--411
+
+ []
+
+Package babel Info: Redefining dutch shorthand "|
+(babel)             in language  on input line 411.
+Package babel Info: Redefining dutch shorthand "~
+(babel)             in language  on input line 411.
+Package babel Info: Redefining dutch shorthand "|
+(babel)             in language  on input line 411.
+Package babel Info: Redefining dutch shorthand "~
+(babel)             in language  on input line 411.
+[11 <./figs/transistor.pdf> <./figs/transistor_VI.pdf
+
+pdfTeX warning: pdflatex (file ./figs/transistor_VI.pdf): PDF inclusion: multip
+le pdfs with page group included in a single page
+>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 417.
+Package babel Info: Redefining dutch shorthand "|
+(babel)             in language  on input line 417.
+Package babel Info: Redefining dutch shorthand "~
+(babel)             in language  on input line 417.
+Package babel Info: Redefining dutch shorthand "|
+(babel)             in language  on input line 417.
+Package babel Info: Redefining dutch shorthand "~
+(babel)             in language  on input line 417.
+[12]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 417.
 
 (/Users/juleshammenecker/Documents/Dropbox/Versterker/documentation/document/do
 cument.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 384.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 384.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 417.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 417.
 Package rerunfilecheck Info: File `document.out' has not changed.
 (rerunfilecheck)             Checksum: 7022010B5DFE7723D0C306094DB14019;806.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 384.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 417.
  ) 
 Here is how much of TeX's memory you used:
- 7946 strings out of 493315
- 119367 string characters out of 6137903
- 219249 words of memory out of 5000000
- 11229 multiletter control sequences out of 15000+600000
- 18636 words of font info for 45 fonts, out of 8000000 for 9000
+ 7990 strings out of 493315
+ 120067 string characters out of 6137903
+ 220123 words of memory out of 5000000
+ 11246 multiletter control sequences out of 15000+600000
+ 19322 words of font info for 46 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 36i,10n,38p,700b,501s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,10n,38p,785b,501s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
 /usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></u
@@ -699,12 +741,13 @@ nts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2013/texmf-dist/font
 s/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2013/texmf-dist/fonts/
 type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2013/texmf-dist/fonts/ty
 pe1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type
-1/public/cm-super/sfrm1728.pfb>
+1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/
+public/cm-super/sfti1000.pfb>
 Output written on /Users/juleshammenecker/Documents/Dropbox/Versterker/document
-ation/document/document.pdf (10 pages, 683991 bytes).
+ation/document/document.pdf (12 pages, 713493 bytes).
 PDF statistics:
- 542 PDF objects out of 1000 (max. 8388607)
- 427 compressed objects within 5 object streams
- 66 named destinations out of 1000 (max. 500000)
- 177 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 606 PDF objects out of 1000 (max. 8388607)
+ 482 compressed objects within 5 object streams
+ 90 named destinations out of 1000 (max. 500000)
+ 187 words of extra memory for PDF output out of 10000 (max. 10000000)
 

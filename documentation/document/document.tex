@@ -1,4 +1,4 @@
-\title{Labo: Ontwerp van een audio versterker}
+\title{Ontwerp een e-VUBOX}
 \author{}
 \date{}
 
@@ -19,7 +19,7 @@
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=0.4\textwidth]{foto.jpg}
-	\caption{E-VUBOX 2k15}
+	\caption{e-VUBOX}
 	\label{fig:foto}
 \end{figure}
 
@@ -40,7 +40,7 @@ Elektronica is het gebruik van de beweging van elektronen om informatie te verwe
 De schematische voorstelling van elektronische componenten en een netwerk zijn te vinden in Figuur \ref{fig:component_en_schakeling}. Met pijltjes zijn de twee grootheden aangeduid die in de elektronica opperbelangrijk zijn :
 
 \begin{enumerate}
-	\item de \textbf{spanning} (ook voltage of potentiaal genoemd) gemeten in volt [V], vaak aangeduid met de letter $V$ of $U$. Dit stelt het verschil in potentiële elektrische energie \textbf{tussen twee punten} \footnote{Je kent al een maat voor het verschil in potientiële gravitationele energie: de hoogte in meter. Zoals een bal valt van hoog naar laag, gaat een positieve lading lopen van een hoge spanning naar een lage spanning.}.
+	\item de \textbf{spanning} (ook voltage of potentiaal genoemd) gemeten in volt [V], vaak aangeduid met de letter $V$ of $U$. Dit stelt het verschil in potentiële elektrische energie \textbf{tussen twee punten} \footnote{Je kent al een maat voor het verschil in potientiële gravitationele energie: de hoogte in meter. Zoals een bal valt van hoog naar laag, gaat een positieve lading lopen van een hoge spanning naar een lage spanning.}. De spanning is altijd een \textbf{verschil}: de spanning  $V$ over de componenten in figuur \ref{subfig:componenten} is bijvoorbeeld $V = V_2-V_1$.
 	\item de \textbf{stroom} gemeten in ampère [A], vaak aangeduid met de letter $I$. Dit stelt de verplaatsing voor van een hoeveelheid ladingen (hier elektronen) door de component per tijdseenheid.
 \end{enumerate}
 
@@ -98,7 +98,7 @@ Soms kan je twee weerstanden door een weerstand vervangen als ze speciaal samenz
 	\begin{align}
 		\frac{1}{R_{v}}= \frac{1}{R_{1}} + \frac{1}{R_{2}} 
 	\end{align}
-	Door weerstanden in parallel te plaatsen, krijg je een kleine weerstand.
+	Door weerstanden in parallel te plaatsen, krijg je een kleinere weerstand.
 \end{itemize}
 
 \begin{figure}[hbtp]
@@ -190,7 +190,7 @@ De spanningswet (figuur \ref{subfig:kvl}) pas je zo toe: vind een gesloten lus i
 \label{fig:kirchoff}
 \end{figure}
 
-\paragraph*{Fun fact:} Je kan de vergelijkingen voor serie en parallel weerstanden (sectie \ref{sssec:serie_en_parallel}) afleiden met behulp van de wetten van Kirchoff en de wet van Ohm.
+\paragraph*{Fun fact:} Je kan de vergelijkingen voor serie en parallel weerstanden (sectie \ref{sssec:serie_en_parallel}) afleiden met behulp van de wetten van Kirchhoff en de wet van Ohm.
 
 \paragraph*{Oefening van Kirchhoff:}
 - 4 takken met één onbekende: KCL
@@ -250,27 +250,40 @@ We hebben de muziek dus omgevormd naar een spannings-signaal. Stel dat $V_s$ ons
 	\label{fig:volume}
 \end{figure}
 
-Met de stroomwet van Kirchhof kunnen we zien dat alle stromen in het circuit gelijk zijn ($I_s = I_1 = I_2$). We kunnen die stroom berekenen door twee weerstanden de vervangen door hun serie-weerstand, en de stroom door de serieweerstand uit te drukken:
+Om een netwerk op te lossen hebben we alleen de twee wetten van Kirchhoff nodig. In dit netwerk luiden ze:
 
 \begin{align}
-I_2 = \frac{V_s}{R_1+R_2}	
+    I_S &= I_1 = I_2 \\
+    V_S &- V_1 -V-1 = 0 
 \end{align}
 
-We gebruiken dan de wet van Ohm om $V_2$ te vinden:
+Samen met de wet van Ohm voor de twee weerstanden kunnen we alle stromen en spanningen bepalen.
+
 \begin{align}
-    V_2 = R_2 \cdot I_2 = \frac{R_2}{R_1+R_2}V_s
+    V_1 = R_1 \cdot I_1 \\
+    V_2 = R_2 \cdot I_2
 \end{align}
 
+\paragraph*{Doe-het-zelf:} Vind nu, dankzij de vier vorige vergelijkingen, de uitdrukking voor de spanning $V_2$ in functie van $V_s$, $R_1$ en $R_2$. Omdat we alleen de spanningsverhouding willen weten, mogen er geen stromen voorkomen in de formule.
+\\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill \\
+\begin{align}
+    V_2 = \ldots\ldots
+\end{align}
 Je kan zien dat de spanning $V_2$, die we de uitgangsspanning noemen, altijd kleiner is dan (of gelijk aan) de ingangsspanning $V_s$. Daarom noemen we dit een spanningsdeler.
 \paragraph*{Doe-het-zelf:} Je heb een voltage van $9$ V als ingangspanning, en je wilt een voltage van $1.5$ V als uitgangspanning. $R_1$ is al gekozen en heeft een weerstand van $1$ k$\Omega$ ($1000 \Omega$). \marginpar{waardes gebruiken die later nuttig gaan zijn voor transistor.} Welke waarde moet je kiezen voor $R_2$?
 \\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill \\
-
+\begin{align}
+    R_2 = \ldots\ldots
+\end{align}
 In de praktijk wordt een spanningdeler vaak met een regelbare weerstand gemaakt (zie figuur \ref{subfig:regelbareR}), zodat de verhouding tussen de in- en uitgangsspanning kan veranderd worden. In figuur \ref{subfig:pot} zie je een \textbf{potentiometer}, dat is een regelbare spanningsdeler. Het is eigenlijk een regelbare weerstand die je in het midden kan aftakken, en dat vormt een spanningsdeler omdat boven de aftakking een weerstand is, en eronder ook.
 
-We gaan een potentiometer gebruiken als volumeknop! Omdat je een potentiometer volledig kunt toedraait of opendraaien, maak de grootte van de weerstand niets uit voor de spannigsverhouding, je kan van een verhouding van 0 tot 1 gaan. Maar wat wel belangrijk is, is dat er niet te veel stroom door de potentiometer vloeit, want anders wordt er vermogen gebruikt door de volumeknop en gaan onze batterij zeer snel plat zijn. 
+We gaan een potentiometer gebruiken als volumeknop! Omdat je een potentiometer volledig kunt toe- of opendraaien, maak de grootte van de weerstand niets uit voor de spannigsverhouding. Maar wat wel belangrijk is, is dat er niet te veel stroom door de potentiometer vloeit, want anders wordt er vermogen gebruikt door de volumeknop en gaan onze batterij zeer snel plat zijn. 
 
-\paragraph*{Doe-het-zelf:} Welke grootte moet de potentiometer hebben, wetend dat de ingangsspanning $200$ mV is en we het vermogen willen beperken to 4 $\mu$W ( = $4 \cdot 10^{-6}$ W)? \textbf{Tip:} De formule voor elektrisch vermogen kan je vinden op pagina \pageref{eq:vermogen}.
+\paragraph*{Doe-het-zelf:} Welke weerstand $R$ moet de potentiometer hebben, wetend dat de ingangsspanning $V$ $200$ mV ( = $200 \cdot 10^{-3}$ V)is en we het vermogen $P$ willen beperken to 4 $\mu$W ( = $4 \cdot 10^{-6}$ W)? \textbf{Tip:} De formule voor elektrisch vermogen kan je vinden op pagina \pageref{eq:vermogen}.
 \\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill \\
+\begin{align}
+    R = \ldots\ldots
+\end{align}
 
 En zo is onze eerst deel van onze versterker ontworpen! Laten we verder gaan met de aan/uit knop, zodat we snel naar de versterking kunnen gaan.
 \begin{figure}
@@ -293,92 +306,112 @@ En zo is onze eerst deel van onze versterker ontworpen! Laten we verder gaan met
 \end{figure}
 
 \subsection{De aan/uit LED: de diode}
-Een handig onderdeel op veel elektronische toestellen is het LED-lampje dat brandt om aan te geven dat het toestal aan is. LED staat voor Light Emitting Diode, lichtgevende diode\footnote{Er bestaan ook niet-lichtgevende diodes.}. Laten we eens kennismaken met de diode\ldots 
-Een diode (figuur \ref{fig:diode}) is een heel belangrijke en nuttige elektronische component, die alleen stroom doorlaat in één richting.
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=0.1\textwidth]{diode}
-	\caption{Een diode met voorwaarte spanning $U_d$ en stroom $I_D$. De diode laat alleen stroom toe in de  positieve stroomriching (richting van de stroompijl).}
-	\label{fig:diode}
-\end{figure}
-
-Wanneer een stroom loop door de diode, ontstaat een voorwaarte spanning over de diode. In figuur \ref{fig:diode_grafiek} zie de grafiek van de stroom in functie van de spanning van de diode de we gaan gebruiken in onze versterker. In tegenstelling met de weerstand is de fysische wet van de diode niet-linear (= het is geen rechte), het is een exponentiële functie.
+Een handig onderdeel op veel elektronische toestellen is het LED-lampje dat brandt om aan te geven dat het toestal aan is. LED staat voor Light Emitting Diode, dat we kunnen vertalen lichtgevende diode\footnote{Niet alle diodes zijn lichtegevend, diodes zijn ook van nut voor andere toepassingen.}. Een diode (figuur \ref{fig:diode}) is een heel belangrijke en nuttige elektronische component, die alleen stroom doorlaat in één richting.
 
 \begin{figure}[htbp]
-	\centering
-	\includegraphics[width=0.3\textwidth]{diode_grafiek}
+\centering
+	\begin{subfigure}[b]{0.45\linewidth}
+		\centering
+		\includegraphics[width=0.2\textwidth]{diode}
+		\caption{Een diode met voorwaarte spanning $U_D$ en stroom $I_D$. De diode laat alleen stroom toe in de  positieve stroomriching (richting van de stroompijl).}
+		\label{fig:diode}
+	\end{subfigure}
+	~
+	\begin{subfigure}[b]{0.45\linewidth}
+		\centering
+	\includegraphics[width=0.8\textwidth]{diode_grafiek}
 	\caption{Grafiek van de stroom in functie van de spanning van een diode.}
 	\label{fig:diode_grafiek}
+	\end{subfigure}
+	\caption{Symbool en grafiek van een diode.}
 \end{figure}
 
-Omdat rekenen met een exponentiële functie onhandig is, gaat een ingenieursstudent meestal eerst proberen om zich te redden met alleen de grafiek. We gaan een circuit oplossen zonder de die moeilijke functie te gebruiken.
+In figuur \ref{fig:diode_grafiek} zie de grafiek van de stroom in functie van de spanning van de diode de we gaan gebruiken in onze versterker. In tegenstelling met de weerstand is de fysische wet van de diode niet-linear (= het is geen rechte), het is een exponentiële functie. 
+
+Omdat rekenen met een exponentiële functie onhandig is, gaat een ingenieursstudent meestal eerst proberen om zich te redden met de grafiek. We gaan het circuit in figuur \ref{fig:diode_netwerk} oplossen zonder de die moeilijke functie te gebruiken.
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.5\textwidth]{diode_netwerk}
+	\includegraphics[width=0.3\textwidth]{diode_netwerk}
 	\caption{Diode netwerk.}
 	\label{fig:diode_netwerk}
 \end{figure}
-\marginpar{verander i2 door iR}
 
-\begin{itemize}
-	\item 20 mA omdat leuk lichtje
-	\item komt overeen met 2.1 V
-	\item moeten we zorgen dat rest van spanning over weerstand
-	\item bereken de weerstand die nodig is.
-\end{itemize}
+De keuze van de stroom door de LED bepaalt hoe fel het lichtje brand, dus die keuze gaan we als eerste maken. De datasheet\footnote{Een datasheet is een document dat de eigenschappen van elektronische componenten beschrijft.} stelt dat $10$ mA een typische stroomwaarde is voor onze LED. We zien dat op het grafiek in figuur \ref{fig:diode_grafiek} dat de voltage over de diode dan $1.8 $V moet zijn. De spanningsbron die we gaan gebruiken in dit netwerk (een batterij) geeft een constant waarde $V_s = 9$ V. We zijn op zoek naar de weerstand die nodig is zodat de $U_D = 1.8$ V en $I_D =10$ mA. Om het netwerk op te lossen gebruiken we zoals altijd de wetten van Kirchhoff:
+\begin{align}
+	+V_s &- U_D - V_R = 0  \\
+	I_s &= I_D = I_R
+\end{align}
+\paragraph*{Doe-het-zelf:} Kan je de waarde vinden van de weerstand die nodig is? \textbf{Tip:} bepaal $I_R$ en $V_R$ uit de wetten van Kirchhoff.
+\\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill \\
+\begin{align}
+    R = \ldots\ldots
+\end{align}
+
+Om de aan/uit LED effectief te laten werken gaan we een schakelaar tussen de bron en de diode zetten zodat het licht alleen brandt wanneer het toestal aan is.
 
 \subsection{De versterker: de transistor}
+De transistor is een actieve elektronische component uitgevonden in $1947$. In tegenstelling met passieve componenten zoals de diode en de weerstand hebben actieve componenten nood aan een voeding, een externe energiebron die nodig is om ze te laten werken. Ze kunnen dankzij die extra energiebron (zoals een batterij) energie inpompen in een netwerk, en zijn dus handig voor versterking.
 
-% \section{Het nut van een versterker}
-
-% Het doel van ons project is om een versterker te bouwen, maar waarom een versterker nodig is wordt hier kort uiteengezet. We willen muziek dat uit onze muziekspeler komt beluisteren. Meestal doen we dat met oortjes of een koptelefoon als we alleen zijn. Maar als we de muziek willen laten beluisteren door vrienden, dan moet het geluid een beetje luider.
-
-% Een luidspreker onmiddellijk aansluiten aan onze muziekspeler gaat geen luid lawaai maken. Dit is omdat een luidspreker een hogere spanning en stroom nodig heeft dan wat de muziekspeler kan geven. Dit is waarom een versterker nuttig is, het gaat de spanning aan de uitgang van de muziekspeler versterken en meer stroom kunnen leveren aan de uitgang.
-
-% \textbf{Uitleg hoe een luidspreker werkt + muziek is een sinus?}
-
-% We weten alles wat nodig is, aan de slag!
-
-% \section{Ontwerp}
-
-% We gaan nu beginnen met het ontwerp, dat bestaat uit het ingenieus kiezen van de elektronische componenten waaruit de versterker is opgebouwd. Die keuze wordt bepaald door de eisen die we hebben voor de versterker:
-
-% \begin{enumerate}
-% 	\item Het ontwerp moet eenvoudig zijn.
-% 	\item De versterker moet draagbaar zijn, om het overal te kunnen gebruiken. ($\rightarrow$ dwz: batterij)
-% 	\item Amplitude van het voltage aan de uitgang van de versterker moet vijf keer groter zijn dan aan de ingang.
-% 	\item De uitgang van de versterker moet genoeg stroom leveren om de luidspreker aan te sturen.
-% \end{enumerate}
-
-% Enkele elektronische ingenieurs zijn ons voorgeweest en hebben al een elektronisch netwerk gemaakt die aan de eisen kan voldoen. Dat netwerk kunnen we vinden in figuur~\ref{fig:volledig_schema}. Dit is een typisch schema dat elektronische ingenieurs gebruiken. 
-
-% \begin{figure}[htbp]
-% 	\centering
-% 	\includegraphics[width=\textwidth]{volledig_schema}
-% 	\caption{Het gebruikt netwerk voor ons ontwerp.}
-% 	\label{fig:volledig_schema}
-% \end{figure}
+ De transistor bestaat in verschillende types, wij gaan ons beperken tot de \emph{bipolaire NPN} transistor. Zoals je kan zien in figuur \ref{subfig:transistor_bce} is het een component met 3 pinnen, die elk een naam dragen: de basis, de collector en de emitter. 
 
 
+\begin{figure}[htbp]
+\centering
+	\begin{subfigure}[b]{0.45\linewidth}
+		\centering
+		\includegraphics[width=0.25\textwidth]{transistor}
+		\caption{De bipolaire transistor met Basis, Collector en Emitter aangeduid.}
+		\label{subfig:transistor_bce}
+	\end{subfigure}
+	~
+	\begin{subfigure}[b]{0.45\linewidth}
+		\centering
+	\includegraphics[width=0.7\textwidth]{transistor_VI}
+	\caption{Bipolaire transistor met stromen en spanningen. Alle stromen worden conventioneel \textbf{naar} de transistor toe getekend.}
+	\label{subfig:transistor_vi}
+	\end{subfigure}
+	\caption{De bipolaire npn transistor.}
+	\label{fig:transistor}
+\end{figure}
 
+De fysische wetten die de relatie geeft tussen de stromen en de spanningen noemen de Ebers-Moll vergelijkingen. Zoals met de diode worden die niet vaak gebruikt tijdens het ontwerp. We kunnen dan  de grafieken gebruiken, maar voor de bipolaire transistor kunnen ook enkele regeltjes volstaan om te kunnen ontwerpen. 
 
+De regels waaraan een transistor zich houdt zijn:
+\begin{enumerate}
+	\item De spanning op collector moet positiever zijn dan die op de basis: 
+\begin{align}
+    V_{CB} > 0~V. 
+\end{align}
+		
+	\item De spanningsval tussen basis en emitter is ongeveer $0.7$ V: 
+\begin{align}
+    V_{BE} \approx 0.7~V
+\end{align}
 
-% \begin{itemize}
-% 	\item serie
-% 	\item parallel
-% \end{itemize}
+	\item Als aan de twee vorige regels is voldaan, is de collectorstroom een versterkte versie van de basisstroom: 
+	\begin{align}
+	    I_C = \beta I_B
+	    \label{eq:hfe}
+	\end{align}
 
-% \paragraph*{Ons eerst netwerk: de weerstandsdeler}
+	$±\beta$ (ook als $h_{FE}$ genoteerd) wordt de stroomversterkingsfactor genoemd, en kan typisch $50$ tot $250$ bedragen.
+\end{enumerate}
 
-% \begin{itemize}
-% 	\item stroom door R1+R2
-% 	\item spanning over R2
-% 	\item $V_{R2} = \frac{R1}{R1+R2}V$
-% \end{itemize}
-% \subsection{Jogging: LED}
-% \subsection{Eerste Marathon: De Transistor}
-% \subsection{Tweede Marathon: De Opamp}
+De wetten van Kirchhoff gelden hier ook\footnote{We hebben hier eigenlijk de ``algemene'' wetten van Kirchoff gebruikt, waarvan de wetten van Kirchhoff die we hebben gezien zijn afgeleid. We kunnen inderdaad hier niet echt een knooppunt en een lus definëren in het ``midden'' van de transistor.}:
+\begin{align}
+    I_C		&+ I_B = -I_E \\
+    V_{BE}  &+ V_{CB} - V_{CE} = 0
+\end{align}
 
+Omdat de stroomversterkingsfactor van een transistor niet echt een te vertrouwen waarde heeft (het kan afhangen van temperatuur, waar en wanneer het gemaakt werd, enz\ldots), gaan we niet dat getal in rekening brengen tijdens het ontwerp. We kunnen alleen maar met zekerheid zeggen dat het ``groot'' is. Die informatie lijkt nutteloos, maar heeft een interessant gevolg.
 
+\paragraph*{Doe-het-zelf:} Elimineer $I_B$ van de stroomwet van Kirchhoff met behulp van vergelijking (\ref{eq:hfe}). Vind dan een uitdrukking voor $I_C$. Stel dan dat $\beta = 250$, en rond af. Welke relatie vind je tussen $I_C$ en $I_E$? 
+\\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill \\
+\begin{align}
+    I_C \approx \ldots \ldots
+\end{align}
+Een negative stroom is perfect mogelijk, dat wilt gewoon zeggen dat de stroom loopt tegen de pijlrichting in van figuur \ref{subfig:transistor_vi}.
+
+En we zijn nu gereed
 \end{document}
