@@ -26,25 +26,25 @@
 \tableofcontents
 
 \section{Doelstelling}
-In dit labo gaan we een eerste stap in de elektronica zetten door zelf een audio versterker te maken, stap voor stap van de basiselektronica tot het finaal product. Tijdens deze opdracht gaan we ook een kijkje nemen in het brein van een ingenieursstudent elektronica wanneer die zo'n taak vervuld. 
-We gaan beginnen met een inleiding in de elektronica, kennismaking met basisregels, componenten en schakelingen, naar complexere onderdelen, tot de versterker!
+In dit labo gaan we een eerste stap in de elektronica zetten door zelf een audioversterker te maken, stap voor stap van de basiselektronica tot het finaal product. Tijdens deze opdracht gaan we ook een kijkje nemen in het brein van een ingenieursstudent elektronica wanneer die zo'n taak vervuld. 
+We gaan beginnen met een inleiding in de elektronica. Daar gaan we kennismaken met basisregels die nodig zijn om componenten en schakelingen te begrijpen en zelf te ontwerpen. Daarna stappen we over naar naar complexere onderdelen, en dan gaan we onze eigen versterker bouwen.
 
-Elektronica kan interessant zijn om te bestuderen omdat veel leuke en/of nuttige objecten mogelijk zijn omwille van elektronica. Alledaagse objecten zoals een GSM of een computer bevatten veel elektronica. In de ziekenhuis kan je ook allerhande toestellen vinden die dagelijkes levens redden. In de entertainment wereld vind je elektronica terug in cameras, schermen en spelconsoles. Veel geavanceerde objecten zoals zelfrijdende autos, vliegtuigen, straaljagers en automatische robots in fabrieken zouden niet mogelijk zijn zonder de elektronica. 
+Elektronica is interessant om te bestuderen omdat veel leuke en/of nuttige objecten mogelijk zijn omwille van elektronica. Alledaagse objecten zoals een GSM of een computer bevatten natuurlijk veel elektronica. Maar ook in het ziekenhuis kan je ook toestellen vinden die dagelijkes levens redden, zoals een MRI-scanners of een elektrocardiogram. Zelfs, de wereld van entertainement zit boordevol elektronische netwerken: in cameras, schermen,  spelconsoles, Virtual Reality,\ldots Veel geavanceerde objecten zoals zelfrijdende autos, de automatische piloot in vliegtuigen en andere robots met artificiële intelligentie zouden niet mogelijk zijn zonder o.a. ingenieurs in de elektronica. 
 
-
-Als stromen, spanningen, de wet van Ohm en de wetten van Kirchhoff geen bekende concepten zijn, volgt hier een overzicht van de wonderlijke wereld van de elektronica met alles wat je moet weten. Indien je al een basis hebt in elektronica, mag je het deel ``Elektronica: componenten en schakelingen'' snel overlopen en onmiddellijk beginnen met hoofdstuk \ref{sec:bouwstenen} op pagina \pageref{sec:bouwstenen}. 
+Als voor jou stromen, spanningen, de wet van Ohm en de wetten van Kirchhoff geen bekende concepten zijn, volgt hier een overzicht van de wonderlijke wereld van de elektronica met alles wat je moet weten. Indien je dit al hebt gezien, mag je het deel ``Elektronica: componenten en schakelingen'' snel overlopen en onmiddellijk beginnen met hoofdstuk \ref{sec:bouwstenen} op pagina \pageref{sec:bouwstenen}. 
 
 \section{Elektronica: componenten en schakelingen}
-Elektronica is het gebruik van de beweging van elektronen om informatie te verwerken, te versturen of op te slaan. Dit doen we door netwerken van elektronische componenten te bouwen. Elektronische componenten zijn eenvoudige bouwstenen waarmee we complexe schakelingen kunnen bouwen op zo een manier dat die specifieke taken uitvoeren: het ontvangen en versturen van berichtjes met een gsm, het afbeelden van een foto op een scherm en vele andere toepassingen die je elke dag tegenkomt. Je hebt waarschijnlijk een stuk elektronica in jouw broekzak op dit ogenblik!
+Elektronica is het gebruik van de beweging van elektronen om informatie te verwerken, te versturen of op te slaan. Dit doen we door netwerken van elektronische componenten te bouwen. Elektronische componenten zijn eenvoudige bouwstenen waarmee we complexe schakelingen kunnen bouwen op zo een manier dat die specifieke taken uitvoeren: het ontvangen en versturen van berichtjes met een gsm, het afbeelden van een foto op een scherm en vele andere toepassingen die je elke dag tegenkomt. Je hebt waarschijnlijk een object vol elektronica in jouw broekzak op dit ogenblik!
 
 De schematische voorstelling van elektronische componenten en een netwerk zijn te vinden in Figuur \ref{fig:component_en_schakeling}. Met pijltjes zijn de twee grootheden aangeduid die in de elektronica opperbelangrijk zijn :
 
 \begin{enumerate}
 	\item de \textbf{spanning} (ook voltage of potentiaal genoemd) gemeten in volt [V], vaak aangeduid met de letter $V$ of $U$. Dit stelt het verschil in potentiële elektrische energie \textbf{tussen twee punten} \footnote{Je kent al een maat voor het verschil in potientiële gravitationele energie: de hoogte in meter. Zoals een bal valt van hoog naar laag, gaat een positieve lading lopen van een hoge spanning naar een lage spanning.}. De spanning is altijd een \textbf{verschil}: de spanning  $V$ over de componenten in figuur \ref{subfig:componenten} is bijvoorbeeld $V = V_2-V_1$.
+
 	\item de \textbf{stroom} gemeten in ampère [A], vaak aangeduid met de letter $I$. Dit stelt de verplaatsing voor van een hoeveelheid ladingen (hier elektronen) door de component per tijdseenheid.
 \end{enumerate}
 
-Stroom en spanning veranderen meestal in functie van de tijd, anders zou er natuurlijk niet veel interessants gebeuren, ze worden dan beschreven door wiskundige functies. Enkele voorbeelden:
+Stroom en spanning veranderen meestal in functie van de tijd, anders zou er natuurlijk niet veel interessants gebeuren. Ze kunnen dan beschreven worden door wiskundige functies zoals:
 \begin{align}
      I(t) = 0.1 \text{A} \cdot sin(t), \\
      V(t) = 4 \text{V} \cdot e^{-\frac{t}{10 s}}.
@@ -69,7 +69,8 @@ Stroom en spanning veranderen meestal in functie van de tijd, anders zou er natu
 	\caption{Componenten en een schakeling. }
 	\label{fig:component_en_schakeling}
 \end{figure}
- Elke component voldoet aan fysische wetten die zijn stroom en de spanning bepalen. Laten we kennismaken met die fysische wetten, en daarna we gaan onmiddellijk ons eerste netwerk oplossen. We bekijken twee basiselementen van de elektronica: de weerstand en de spanningsbron.
+
+ Elke component in de elektronica voldoet aan fysische wetten die zijn stroom en de spanning bepalen. Laten we kennismaken met die fysische wetten, en daarna we gaan onmiddellijk ons eerste netwerk oplossen. We bekijken twee basiselementen van de elektronica: de weerstand en de spanningsbron.
 
 \subsection{De weerstand}
 
@@ -77,7 +78,7 @@ In figuur \ref{subfig:componenten} zie je de schematische voorstelling van een w
 \begin{align}
 	V &= R \cdot I
 \end{align} 
-$R$ is een eigenschap van de  weerstand die men ook elektrische weerstand noemt, het is gemeten in Ohm\footnote{Georg Simon Ohm (1787 - 1854) was een Duits wiskundige en natuurkundige, ontdekker van de wet van Ohm in 1827.} [$\Omega$]. $V$ is de spanning over de weerstand en $I$ de stroom door de weerstand.
+$R$ is een eigenschap van de weerstand die men ook elektrische weerstand noemt, het is gemeten in Ohm\footnote{Georg Simon Ohm (1787 - 1854) was een Duits wiskundige en natuurkundige, ontdekker van de wet van Ohm in 1827.} [$\Omega$]. $V$ is de spanning over de weerstand en $I$ de stroom door de weerstand.
 
 Een weerstand kan je zien als een belemmer van stroom: om door een grote weerstand een hoge stroom te laten vloeien moet je een grote spanning aanleggen. Met een kleine weerstand voldoet een kleine spanning om een grote stroom te hebben. 
 
@@ -85,7 +86,7 @@ Zo dadelijk volgt een voorbeeld, we gaan eerst zien wat weerstanden in serie en 
 
 \subsubsection{Serie en parallel}
 \label{sssec:serie_en_parallel}
-Soms kan je twee weerstanden door een weerstand vervangen als ze speciaal samenzitten, dat kan het ontwerpen gemakkelijker maken. Dit kan in twee gevallen (zie figuur \ref{fig:serie_en_parallel}):
+Soms kan je twee weerstanden door een weerstand vervangen als ze speciaal samenzitten en dat kan het ontwerpen vergemakkelijken. Dit kan in twee gevallen (zie figuur \ref{fig:serie_en_parallel}):
 
 \begin{itemize}
 	\item twee weerstanden zijn \textbf{in serie}: ze hebben één gemeenschappelijke pin, en dezelfde stroom vloeit door de twee weerstanden, dan is de vervangingsweerstand :
@@ -151,6 +152,7 @@ Een spanningbron legt en spanning op van $50~V$ over een weerstand van $200~\Ome
 \\.\dotfill \\.\dotfill \\.\dotfill 
 
 Nu we een simpel netwerk kunnen oplossen, gaan we zien hoe we grotere netwerken moeten oplossen.
+
 \subsection{Netwerken}
 Een netwerk is een aaneenschakeling van componenten, die schematisch wordt voorgesteld zoals in figuur \ref{subfig:netwerk}. Er zijn maar twee regels die gelden voor elektrische netwerken: de wetten van Kirchhoff\footnote{Gustav Robert Kirchhoff (1824 - 1887) was een Duits natuurkundige. Kirchhoff formuleerde zijn spanningswet en zijn stroomwet in 1845, toen hij nog een student was. Slimme kerel!}. Samen met de fysische wetten van de componenten kan je dan alle netwerken van de wereld oplossen. Een netwerk oplossen wilt zeggen dat je alle stromen en spanningen bepaalt in dat netwerk.
 
@@ -192,9 +194,27 @@ De spanningswet (figuur \ref{subfig:kvl}) pas je zo toe: vind een gesloten lus i
 
 \paragraph*{Fun fact:} Je kan de vergelijkingen voor serie en parallel weerstanden (sectie \ref{sssec:serie_en_parallel}) afleiden met behulp van de wetten van Kirchhoff en de wet van Ohm.
 
-\paragraph*{Oefening van Kirchhoff:}
-- 4 takken met één onbekende: KCL
-- lus met 5 componenten met één onbekende spanning: KVL
+\paragraph*{Doe-het zelf:} Pas de stroomwet van Kirchhoff toe in figuur \ref{subfig:kcl_oef}, en vind de missende stromen. Pas de spanningswet van Kirchhoff toe in figuur \ref{subfig:kvl_oef} en vind de spanningen $V_R$ en $U_C$. Zoals je kan zien, hebben we volledig geen kennis van het netwerk nodig om die te kunnen uitrekenen. Handig!
+\\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill \\
+
+\begin{figure}[htbp]
+	\centering
+	\begin{subfigure}[b]{0.45\linewidth}
+		\centering
+		\includegraphics[width=0.7\textwidth]{kcl_oef.pdf}
+		\caption{Vind $I_R$ en $I_s$.}
+		\label{subfig:kcl_oef}
+	\end{subfigure}
+	~
+	\begin{subfigure}[b]{0.45\linewidth}
+		\centering
+		\includegraphics[width=0.9\textwidth]{kvl_oef.pdf}
+		\caption{Vind $V_R$ en $U_C$. }
+		\label{subfig:kvl_oef}
+	\end{subfigure}
+\caption{De wetten van Kirchhoff}
+\label{fig:kirchoff_oef}
+\end{figure}
 
 We zijn nu gereed om de bouwstenen van onze versterker te ontwerpen!
 
@@ -351,10 +371,31 @@ De keuze van de stroom door de LED bepaalt hoe fel het lichtje brand, dus die ke
 Om de aan/uit LED effectief te laten werken gaan we een schakelaar tussen de bron en de diode zetten zodat het licht alleen brandt wanneer het toestal aan is.
 
 \subsection{De versterker: de transistor}
-De transistor is een actieve elektronische component uitgevonden in $1947$. In tegenstelling met passieve componenten zoals de diode en de weerstand hebben actieve componenten nood aan een voeding, een externe energiebron die nodig is om ze te laten werken. Ze kunnen dankzij die extra energiebron (zoals een batterij) energie inpompen in een netwerk, en zijn dus handig voor versterking.
+De transistor is een actieve elektronische component uitgevonden in $1947$, en is het baisingrediënt van alle elektronische netwerken, van simpele versterkers tot een volledige PC. In tegenstelling met passieve componenten zoals de diode en de weerstand hebben actieve componenten nood aan een voeding, een externe energiebron die nodig is om ze te laten werken. Ze kunnen dankzij die extra energiebron (zoals een batterij) energie inpompen in een netwerk, en zijn dus handig voor versterking.
 
- De transistor bestaat in verschillende types, wij gaan ons beperken tot de \emph{bipolaire NPN} transistor. Zoals je kan zien in figuur \ref{subfig:transistor_bce} is het een component met 3 pinnen, die elk een naam dragen: de basis, de collector en de emitter. 
+In figuur \ref{fig:sticky} vind je een kleine personage, Sticky, die verantwoordelijk is om een sluis te openen en te sluiten. Spijtig genoeg is Sticky niet de sterkste, en met een gewoon mechanisme zal het nooit lukken. Maar stel dat je een groot elektrisch motor hebt die de sluis opent en sluit, dan kan Sticky met één vinger de sluis openen en sluiten. De batterij en de motor doen eigenlijk al het werk. 
 
+Dit is eigenlijk hoe een transistor werkt! Met een zwak controlesignaal (Sticky), kan je een grote stroom controleren. Een transistor kan als een schakelaar gebruikt worden: de stroom is dan ofwel helemaal  aan of helemaal uit. De tweede toepassing is als versterker: een kleine golf in het controlesignaal (Sticky maakt en golfje met de handvat van de motor) heeft een gigantische golbf in de stroom als gevolg.
+\begin{figure}[htbp]
+\centering
+	\begin{subfigure}[b]{0.45\linewidth}
+		\centering
+		\includegraphics[width=\textwidth]{sitcky_closed}
+		\caption{Open}
+		\label{subfig:sticky_open}
+	\end{subfigure}
+	~
+	\begin{subfigure}[b]{0.45\linewidth}
+		\centering
+	\includegraphics[width=0.85\textwidth]{sitcky_open}
+	\caption{Closed}
+	\label{subfig:sticky_closed}
+	\end{subfigure}
+	\caption{Sticky}
+	\label{fig:sticky}
+\end{figure}
+
+ De transistor bestaat in verschillende types, wij gaan ons beperken tot de \emph{bipolaire NPN} transistor. Zoals je kan zien in figuur \ref{subfig:transistor_bce} is het een component met 3 pinnen, die elk een naam dragen: de basis, de collector en de emitter. De basisstroom neemt hier de rol op van het controlesignaal.
 
 \begin{figure}[htbp]
 \centering
@@ -383,35 +424,53 @@ De regels waaraan een transistor zich houdt zijn:
 \begin{align}
     V_{CB} > 0~V. 
 \end{align}
-		
 	\item De spanningsval tussen basis en emitter is ongeveer $0.7$ V: 
 \begin{align}
     V_{BE} \approx 0.7~V
 \end{align}
 
-	\item Als aan de twee vorige regels is voldaan, is de collectorstroom een versterkte versie van de basisstroom: 
+	\item $I_C, I_B$ en $V_{CE} $ moeten binnen bepaalde maximale waarden liggen, of de transistor gaat stuk.
+
+	\item Als aan de drie vorige regels is voldaan, is de collectorstroom een versterkte versie van de basisstroom: 
 	\begin{align}
 	    I_C = \beta I_B
 	    \label{eq:hfe}
 	\end{align}
+	$±\beta$ (ook als $h_{FE}$ genoteerd) wordt de stroomversterkingsfactor genoemd, en kan typisch $50$ tot $250$ bedragen. Dit is waarom de nuttig is: een minuscuul klein basisstroom geeft aanleiding tot een gigantische collectorstroom.
 
-	$±\beta$ (ook als $h_{FE}$ genoteerd) wordt de stroomversterkingsfactor genoemd, en kan typisch $50$ tot $250$ bedragen.
 \end{enumerate}
 
 De wetten van Kirchhoff gelden hier ook\footnote{We hebben hier eigenlijk de ``algemene'' wetten van Kirchoff gebruikt, waarvan de wetten van Kirchhoff die we hebben gezien zijn afgeleid. We kunnen inderdaad hier niet echt een knooppunt en een lus definëren in het ``midden'' van de transistor.}:
+
 \begin{align}
     I_C		&+ I_B = -I_E \\
     V_{BE}  &+ V_{CB} - V_{CE} = 0
 \end{align}
 
-Omdat de stroomversterkingsfactor van een transistor niet echt een te vertrouwen waarde heeft (het kan afhangen van temperatuur, waar en wanneer het gemaakt werd, enz\ldots), gaan we niet dat getal in rekening brengen tijdens het ontwerp. We kunnen alleen maar met zekerheid zeggen dat het ``groot'' is. Die informatie lijkt nutteloos, maar heeft een interessant gevolg.
+Omdat de stroomversterkingsfactor van een transistor niet echt een te vertrouwen waarde heeft (het kan afhangen van temperatuur, waar en wanneer het gemaakt werd, enz\ldots), gaan we niet dat getal in rekening brengen tijdens het ontwerp. We kunnen alleen maar met zekerheid zeggen dat het ``groot'' is. De transistor lijkt nu niet een heel bruikbaar, maar je gaat zelf een belangrijke vergelijking ontdekken.
 
 \paragraph*{Doe-het-zelf:} Elimineer $I_B$ van de stroomwet van Kirchhoff met behulp van vergelijking (\ref{eq:hfe}). Vind dan een uitdrukking voor $I_C$. Stel dan dat $\beta = 250$, en rond af. Welke relatie vind je tussen $I_C$ en $I_E$? 
+
 \\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill \\
 \begin{align}
     I_C \approx \ldots \ldots
 \end{align}
-Een negative stroom is perfect mogelijk, dat wilt gewoon zeggen dat de stroom loopt tegen de pijlrichting in van figuur \ref{subfig:transistor_vi}.
 
-En we zijn nu gereed
+Een negative stroom is perfect mogelijk, dat wilt gewoon zeggen dat de stroom loopt tegen de pijlrichting in van figuur \ref{subfig:transistor_vi}. We zijn nu gereed om een versterkerschakeling op te lossen!
+
+In figuur \ref{fig:ges} vind je de audio-versterker. 
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.95\textwidth]{ges}
+	\caption{Versterkerschakeling met de transistor.}
+	\label{fig:ges}
+\end{figure}
+
+1) Vind de spanningsversterkingwet
+2) Design de rest
+
+\begin{itemize}
+	\item $I_C = 10 mA$
+	\item $V_{CE} \geq 0.7 $
+	\item 
 \end{document}

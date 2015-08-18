@@ -7,7 +7,7 @@
 \contentsline {subsection}{\numberline {2.3}Mini-netwerk}{4}{subsection.2.3}
 \contentsline {subsection}{\numberline {2.4}Netwerken}{5}{subsection.2.4}
 \contentsline {section}{\numberline {3}Bouwstenen van de E-VUBOX}{6}{section.3}
-\contentsline {subsection}{\numberline {3.1}Versterken van audio}{6}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}De volumeknop: de spanningsdeler}{7}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.1}Versterken van audio}{7}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}De volumeknop: de spanningsdeler}{8}{subsection.3.2}
 \contentsline {subsection}{\numberline {3.3}De aan/uit LED: de diode}{9}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}De versterker: de transistor}{10}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.4}De versterker: de transistor}{11}{subsection.3.4}
