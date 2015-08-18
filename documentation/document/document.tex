@@ -51,6 +51,8 @@ Stroom en spanning veranderen meestal in functie van de tijd, anders zou er natu
  \end{align} 
  waar $t$ de tijd is in seconden.
 
+ Een spanning (stroom) die constant is over de tijd noemen we een $DC$-spanning(-stroom). Variërende spanningen (stromen) noemen we $AC$-spanningen(stromen).
+
 \begin{figure}[hbtp]
 	\centering
 	\begin{subfigure}[b]{0.45\linewidth}
@@ -299,7 +301,7 @@ In de praktijk wordt een spanningdeler vaak met een regelbare weerstand gemaakt 
 
 We gaan een potentiometer gebruiken als volumeknop! Omdat je een potentiometer volledig kunt toe- of opendraaien, maak de grootte van de weerstand niets uit voor de spannigsverhouding. Maar wat wel belangrijk is, is dat er niet te veel stroom door de potentiometer vloeit, want anders wordt er vermogen gebruikt door de volumeknop en gaan onze batterij zeer snel plat zijn. 
 
-\paragraph*{Doe-het-zelf:} Welke weerstand $R$ moet de potentiometer hebben, wetend dat de ingangsspanning $V$ $200$ mV ( = $200 \cdot 10^{-3}$ V)is en we het vermogen $P$ willen beperken to 4 $\mu$W ( = $4 \cdot 10^{-6}$ W)? \textbf{Tip:} De formule voor elektrisch vermogen kan je vinden op pagina \pageref{eq:vermogen}.
+\paragraph*{Doe-het-zelf:} Welke weerstand $R$ moet de potentiometer hebben, wetend dat de ingangsspanning $V$ maximaal $200$ mV ( = $200 \cdot 10^{-3}$ V)is en we het vermogen $P$ willen beperken to 4 $\mu$W ( = $4 \cdot 10^{-6}$ W)? \textbf{Tip:} De formule voor elektrisch vermogen kan je vinden op pagina \pageref{eq:vermogen}.
 \\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill \\
 \begin{align}
     R = \ldots\ldots
@@ -395,7 +397,9 @@ Dit is eigenlijk hoe een transistor werkt! Met een zwak controlesignaal (Sticky)
 	\label{fig:sticky}
 \end{figure}
 
+\subsubsection{De bipolaire npn transistor}
  De transistor bestaat in verschillende types, wij gaan ons beperken tot de \emph{bipolaire NPN} transistor. Zoals je kan zien in figuur \ref{subfig:transistor_bce} is het een component met 3 pinnen, die elk een naam dragen: de basis, de collector en de emitter. De basisstroom neemt hier de rol op van het controlesignaal.
+
 
 \begin{figure}[htbp]
 \centering
@@ -457,20 +461,64 @@ Omdat de stroomversterkingsfactor van een transistor niet echt een te vertrouwen
 \end{align}
 
 Een negative stroom is perfect mogelijk, dat wilt gewoon zeggen dat de stroom loopt tegen de pijlrichting in van figuur \ref{subfig:transistor_vi}. We zijn nu gereed om een versterkerschakeling op te lossen!
+\subsubsection{De audio-versterker}
+In figuur \ref{fig:ges} vind je een audio-versterker dat je kan maken met een transistor. Dit is maar één van de duizenden mogelijkheden. Je ziet dat we een actief netwerk hebben: je twee spanningbronnen: de muziek $V_s$ en de constante voeding van de transistor $V_{CC}$. 
 
-In figuur \ref{fig:ges} vind je de audio-versterker. 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.95\textwidth]{ges}
+	\includegraphics[width=0.6\textwidth]{ges}
 	\caption{Versterkerschakeling met de transistor.}
 	\label{fig:ges}
 \end{figure}
 
-1) Vind de spanningsversterkingwet
-2) Design de rest
+In serie geschakeld met de spanningsbron $V_s$ is er een weerstand $R_s$ en een nieuwe component, de  capaciteit $C$. $R_s$ is de weerstand van de spanningsbron, die ons eigenlijk verveeld maar die in de werkelijkheid altijd aanwezig is. Het is de meeste tijd klein genoeg dat ingenieursstudenten hem vaak verwaarlozen ( doen alsof $R_s = 0 \Omega$). 
 
-\begin{itemize}
-	\item $I_C = 10 mA$
-	\item $V_{CE} \geq 0.7 $
-	\item 
+De capaciteit is een component die voldoet aan de wet : 
+\begin{align}
+    I = C \cdot \frac{dV}{dt}
+\end{align}
+
+Dat betekent ruwweg dat capaciteiten alleen reageren op \emph{verandering in de spanning}, en niet op constante waarden. Het gevolg van die capaciteit is dat de spanning in het knooppunt\footnote{Als we spreken van een spanning in een punt, bedoelen we eigenlijk de spanningsval tussen dat punt en de grond.} 1 de som gaat zijn van $V_s$ en van de spanning omwille van de weerstandsdeler $R_1,R_2$ en $V_{CC}$:
+\begin{align}
+    V_{B} = V_s + \frac{R_1}{R_1+R_2}V_{CC}
+\end{align}
+
+Om de versterker te ontwerpen moeten we de weerstanden $R_1,R_2,R_E$ en $R_C$ kiezen, maar hoe? Laten we eerst zien hoe sterk onze versterker de spanning versterkt. 
+
+\paragraph*{Doe-het-zelf:} Vind een uitdrukking voor de spanning aan de collector $V_C$ in functie van de basisspanning $V_B$. Deze vergelijkingen kunnen je helpen:
+\begin{align}
+    V_{BE} &= V_{B} - V_{E} = 0.7~V \\
+    I_C &\approx I_E
+\end{align}
+\textbf{Tip:} één manier om het te vinden: druk de stroom uit door $R_C$ met de wet van Ohm. Die is nodig om de spanning $V_E$ te vinden die je dan gebruikt om $V_B$ te vinden. Vorm de vergelijking dan om om $V_C$ te isoleren.
+\\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill 
+\begin{align}
+    V_C = \ldots \ldots \ldots \ldots  \ldots  \ldots 
+\end{align}
+
+We kunnen de constante (DC) termen eventjes vergeten en drukken alleen de tijdsvariërende (AC) spanning gedeelte uit van $V_C$, die we met kleine letters noteren:
+\begin{align}
+    v_c = - \frac{R_C}{R_E} \cdot v_b
+\end{align}
+
+Deze schakeling versterkt dus de spanningsgolf met een factor $- \frac{R_C}{R_E}$, de muziekgolf wordt dus omgedraaid en de amplitude versterkt! 
+
+We gaan nu een ontwerpmethode volgen waar verschillende keuzes moeten gemaakt worden. Eens je de methode kent, kan je andere keuzes proberen maken en zien als het werkt: dit is wat designen is! Veel designers gaan het niet graag zeggen, maar een groot deel van ontwerp is trial en error: uitproberen tot dat het werkt. En daar is niets mis mee (als je maar niets opblaast)!
+
+De methode gaat als volgt:
+\begin{enumerate}
+	\item Kies de typische stroom $I_C$. De maximumwaarde die de transistor aankan is $100~mA$, dus het moet kleiner. Te grote stromen gaan ook de batterij sneller leegzuigen, te kleine stromen kunnen de werking van het circuit stoppen. Er zijn nog veel andere voor- en nadelen die je kan opsommen voor te grote of te kleine stromen. We kiezen als voorbeeld: $I_C = 10 mA$. (Vergeet niet dat je zelf een andere keuze kan maken!)
+	\item Kies een typisch voltage $V_C$, waar de muziekgolf rond gaat variëren. De spanning $V_C$ moet groter zijn dan $0.7~V$ (dat kan je afleiden uit de spanningswet van Kirchhoff en  $V_CB > 0$, en $V_BE = 0.7$). Een transistor kan de spanning aan zijn pinnen niet hoger krijgen dan zijn voeding. De maximum is dus $V_CC$ voor onze  batterij is dat $9~V$. Pas op, een batterij gaat slijten, dus misschien is de spanning alleen maar $7~V$ zijn... De voorbeeldkeuze die wie hier maken is $V_C =  3.5~V$, ongeveer in het midden tussen $7~V$ en $0.7~V$. Waarom zou je het midden kiezen?
+	\item Laatste keuze: kies een versterkingsfactor $- \frac{R_C}{R_E}$. Spijtig genoeg hebben muzieksignalen geen typische amplitude. $200mV$ -> $1V$ is $-5.$
+\end{enumerate}
+
+\paragraph*{Doe-het-zelf:} Bereken $R_C$, dan $R_E$, dan $V_E$, dan $V_B$, dan $R_1 en R_2$.
+\\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill 
+
+\subsection{De magische zwarte doos}
+
+\subsection{De luidspreker}
+
+\section{Conclusie}
+
 \end{document}
