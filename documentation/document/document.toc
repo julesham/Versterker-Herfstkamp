@@ -6,13 +6,16 @@
 \contentsline {subsection}{\numberline {2.2}De spanningsbron}{5}{subsection.2.2}
 \contentsline {subsection}{\numberline {2.3}Mini-netwerk}{6}{subsection.2.3}
 \contentsline {subsection}{\numberline {2.4}Netwerken}{7}{subsection.2.4}
-\contentsline {section}{\numberline {3}Bouwstenen van de E-VUBOX}{9}{section.3}
+\contentsline {section}{\numberline {3}Bouwstenen van de e-VUBOX}{9}{section.3}
 \contentsline {subsection}{\numberline {3.1}Versterken van audio}{9}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}De volumeknop: de spanningsdeler}{11}{subsection.3.2}
 \contentsline {subsection}{\numberline {3.3}De aan/uit LED: de diode}{13}{subsection.3.3}
 \contentsline {subsection}{\numberline {3.4}De versterker: de transistor}{15}{subsection.3.4}
-\contentsline {subsubsection}{\numberline {3.4.1}De bipolaire npn transistor}{15}{subsubsection.3.4.1}
+\contentsline {subsubsection}{\numberline {3.4.1}De bipolaire npn transistor}{16}{subsubsection.3.4.1}
 \contentsline {subsubsection}{\numberline {3.4.2}De audio-versterker}{18}{subsubsection.3.4.2}
-\contentsline {subsection}{\numberline {3.5}De magische zwarte doos}{22}{subsection.3.5}
-\contentsline {subsection}{\numberline {3.6}De luidspreker}{22}{subsection.3.6}
-\contentsline {section}{\numberline {4}Conclusie}{22}{section.4}
+\contentsline {subsection}{\numberline {3.5}De magische zwarte doos}{23}{subsection.3.5}
+\contentsline {subsection}{\numberline {3.6}De luidspreker}{23}{subsection.3.6}
+\contentsline {section}{\numberline {4}Conclusie}{23}{section.4}
+\contentsline {section}{\numberline {5}Nagerecht}{23}{section.5}
+\contentsline {subsection}{\numberline {5.1}De hoogdoorlaatfilter en de capaciteit.}{23}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Hoe lang gaat de versterker mee?}{23}{subsection.5.2}

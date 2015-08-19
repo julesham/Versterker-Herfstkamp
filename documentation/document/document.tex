@@ -1,4 +1,4 @@
-\title{Project Ingenieurswetenschappen \\ Ontwerp het elektronisch circuit van de e-VUBOX}
+\title{Project Ingenieurswetenschappen \\ Het elektronisch ontwerp van de e-VUBOX speaker}
 \author{Vrije Universiteit Brussel}
 \date{Versie 08.2015}
 
@@ -202,7 +202,7 @@ Een netwerk is een aaneenschakeling van componenten, die schematisch wordt voorg
 \paragraph*{Voorbeeld}
 De stroomwet (figuur \ref{subfig:kcl}) wordt toegepast als volgt: kies een knooppunt in een netwerk. Beschouw alle takken die dat knooppunt raken, en de bijhorende stromen. Pas op, de richting van de stroom-pijlen is zeer belangrijk. Als je alle stromen optelt die \textbf{naar} het knooppunt wijzen, dan is dat gelijk aan alle stromen die \textbf{weg} van het knooppunt wijzen.
 
-Voor dat we spanningswet toepassen, hebben we de betekenis van het symbool \includegraphics[height=1em]{gnd.pdf} nodig. Dit symbool wordt de \textbf{grond} genoemd. Het is geen component, maar een manier aan te duiden dat alle punten met dat symbool verbonden zijn. Je mag dus een connectie tekenen tussen alle pinnen die aan de grond verbonden zijn. Herrinner U dat een spanning altijd gedefinieerd is tussen twee punten, vaak wordt de grond gebruikt als een van die twee punten, en we zeggen dat de grond op 0 V is.
+Voor dat we spanningswet toepassen, hebben we de betekenis van het symbool \includegraphics[height=1em]{gnd.pdf} nodig. Dit symbool wordt de \textbf{grond} genoemd. Het is geen component, maar een manier aan te duiden dat alle punten met dat symbool verbonden zijn. Je mag dus een connectie tekenen tussen alle pinnen die aan de grond verbonden zijn. Herinner U dat een spanning altijd gedefinieerd is tussen twee punten, vaak wordt de grond gebruikt als een van die twee punten, en we zeggen dat de grond op 0 V is.
 
 \paragraph*{Voorbeeld}
 De spanningswet (figuur \ref{subfig:kvl}) pas je zo toe: vind een gesloten lus in het netwerk (vergeet niet dat alle pinnen aan grond met elkaar verbonden zijn). Teken een lus met een zekere richting in het netwerk. Schrijf de som van de spanningen rekening houdend met de volgende regels:
@@ -239,7 +239,7 @@ De spanningswet (figuur \ref{subfig:kvl}) pas je zo toe: vind een gesloten lus i
 
 Dit beëindigt de kennismaking met de elektronica. Je hebt nu alle basis die nodig is om aan de bouw van een versterker te beginnnen! Daar gaan we alleen nieuwe componenten leren kennen zoals de diode en de transistor, maar voor de rest is er niets nieuws onder de zon!
 
-\section{Bouwstenen van de E-VUBOX}
+\section{Bouwstenen van de e-VUBOX}
 \label{sec:bouwstenen}
 In dit deel gaan we stap voor stap de onderdelen van onze versterker bouwen. We beginnen met een volumeregelaar, omdat we alles al kennen om die te maken. We gaan dan een simpele aan/uit LEDje ontwerpen zodat we weten wanneer onze versterker aan is. Daarna houden we ons bezig met de eigenlijke versterking en gaan we kennismaken met de transistor die ons daarmee gaat helpen. 
 
@@ -247,20 +247,21 @@ Maar eerst en vooral: waarom en hoe versterk je muziek?
 
 \subsection{Versterken van audio}
 
-Ook als je een student in elektronisch ingenieur bent, is een basiskennis in de rest van de wetenschappen toch handig. Want voordat we geluid gaan versterken, moeten we weten wat geluid is!
+Ook als je een student in elektronisch ingenieur bent, is een basiskennis in de rest van de wetenschappen toch handig. Want hoe versterk je geluid?
 
-Geluid is een drukgolf door een lucht. De luchtdeeltjes bewegen heen en weer, en wanneer ze jouw trommelvlies raken, hoor je het geluid. Om het te versterken moeten we eerst de drukgolf omzetten naar iets dat een elektronisch schakeling kan gebruiken. Daarvoor dient een microfoon! Het trillen van luchtdeeltjes wordt in een microfoon omgezet naar het trillen van elektronen. Voor de rest van het netwerk is de microfoon eigenlijk een spanningsbron.
+Geluid is een drukgolf door een lucht. De luchtdeeltjes bewegen heen en weer, en wanneer ze jouw trommelvlies raken, hoor je het geluid. Om het te versterken moeten we eerst de drukgolf omzetten naar een elektronengolf, die we gaan versterken, en dan terug naar een drukgolf zodat we het kunnen horen. Daarvoor gebruiken we twee componenten die je zowieso kent: de microfoon en de luidspreker.
 
-Een voorbeeld van een specifiek geluid is een muzieknoot. De muzieknoot ``la'' hoor je wanneer de luchtdruk op een zekere plaats golft met een frequentie\footnote{frequentie is het aantal volledige golven (op en neer) per seconde} van $440$ Hz. Je kan de luchtdrukgolf die we horen als een ``la'' wiskundig voorstellen als een sinus:
+% iets dat een elektronisch schakeling kan gebruiken. Daarvoor dient een microfoon! Het trillen van luchtdeeltjes wordt in een microfoon omgezet naar het trillen van elektronen. Voor de rest van het netwerk is de microfoon eigenlijk een spanningsbron.
 
+%Een voorbeeld van een specifiek geluid is een muzieknoot. De muzieknoot ``la'' hoor je wanneer de luchtdruk op een zekere plaats golft met een frequentie\footnote{frequentie is het aantal volledige golven (op en neer) per seconde} van $440$ Hz. Je kan de luchtdrukgolf die we horen als een ``la'' wiskundig voorstellen als een sinus:
+
+De microfoon vormt een drukgolf om naar een spanningsgolf. We kunnen een drukgolf uitdrukken als een sinus, met bijvoorbeeld een frequentie van $440$ Hz:
 \begin{align}
 	y(t) = A \cdot \sin (2\pi \cdot 440~\text{Hz} \cdot t)
 \end{align}
-
 met $y(t)$ de luchtdruk in Pascal, $A$ de amplitude van de drukgolf in Pascal en $t$ de tijd in seconden.
 
-De microfoon gaat die drukgolf omvormen naar een spanningsgolf, met dezelfde frequentie (zie figuur \ref{fig:micro}. Men kan die nu versterken met een elektronisch netwerk, omdat we een spanning hebben! Die spanningsgolf kan dan onmiddelijk worden versterkt of opgeslagen in een mp3-bestand en later gebruikt in een muziekspeler.
-
+De microfoon gaat die drukgolf omvormen naar een spanningsgolf, met dezelfde frequentie (zie figuur \ref{fig:micro}.
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=0.95\textwidth]{micro}
@@ -268,17 +269,17 @@ De microfoon gaat die drukgolf omvormen naar een spanningsgolf, met dezelfde fre
 	\label{fig:micro}
 \end{figure}
 
-Om de muziek te kunnen horen moeten we de spanningsgolf terug omzetten naar een luchtdrukgolf, en daarvoor gebruiken we een luidspreker, die exact het omgekeerde doet van een microfoon. Maar als we de spannigsgolf onmiddelijk aansluiten aan de luidspreker, gaat het geluid zeer zeer stil zijn. We komen eindelijk in de kern van dit project: het geluidssignaal moet versterkt worden!
+Om de muziek te kunnen horen moeten we de spanningsgolf terug omzetten naar een luchtdrukgolf, en daarvoor gebruiken we een luidspreker, die exact het omgekeerde doet van een microfoon. 
 
-Inderdaad, de luidspreker heeft meer ``sterkte'' nodig om luid muziek af te spelen. Om dat te doen moeten we het \textbf{elektrisch vermogen} over de luidspreker groot houden. Het elektrisch vermogen dat een component verbruikt wordt berekend als volgt:
+De luidspreker heeft wel ``sterkte'' nodig om luid muziek af te spelen. Om dat te doen moeten we het \textbf{elektrisch vermogen} over de luidspreker groot maken. Het elektrisch vermogen dat een component verbruikt wordt berekend als volgt:
 \begin{align}
      P = V \cdot I
      \label{eq:vermogen}
  \end{align} 
 
- met $P$ het vermogen in Watt, $V$ het voltage over de component en $I$ de stroom door de component. We moeten door de luidspreker dus veel stroom en een hoge spanning aanleggen (X). Dat is net de bedoeling van een versterker.
+ met $P$ het vermogen in Watt, $V$ het voltage over de component en $I$ de stroom door de component.
 
-Nu dat we weten waarom onz netwerk nuttig is, kunnen we aan de bouw van onze versterker beginnen! Het ontwerpen van een versterker is, zoals je het zult zien, vooral het kiezen van veel weerstandswaarden.
+ Het doel van een versterker is dus om het vermogen van de muziek groter te maken! Nu dat we weten waarom ons netwerk nuttig is, kunnen we aan de bouw van onze versterker beginnen! Het ontwerpen van een versterker is, zoals je het zult zien, vooral het kiezen van veel weerstandswaarden.
 
 \subsection{De volumeknop: de spanningsdeler}
 
@@ -311,7 +312,7 @@ Samen met de wet van Ohm voor de twee weerstanden kunnen we alle stromen en span
     V_2 = \ldots\ldots
 \end{align}
 Je kan zien dat de spanning $V_2$, die we de uitgangsspanning noemen, altijd kleiner is dan (of gelijk aan) de ingangsspanning $V_s$. Daarom noemen we dit een spanningsdeler.
-\paragraph*{Doe-het-zelf:} Je heb een voltage van $9$ V als ingangspanning $V_S$, en je wilt een voltage van $1.5$ V als uitgangspanning $V_2$. $R_1$ is al gekozen en heeft een weerstand van $1$ k$\Omega$ ($1000 \Omega$). \marginpar{waardes gebruiken die later nuttig gaan zijn voor transistor.} Welke waarde moet je kiezen voor $R_2$?
+\paragraph*{Doe-het-zelf:} Je heb een voltage van $9$ V als ingangspanning $V_S$, en je wilt een voltage van $1.5$ V als uitgangspanning $V_2$. $R_1$ is al gekozen en heeft een weerstand van $1$ k$\Omega$ ($1000 \Omega$). Welke waarde moet je kiezen voor $R_2$?
 \\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill \\
 \begin{align}
     R_2 = \ldots\ldots
@@ -396,7 +397,10 @@ De transistor is een actieve elektronische component uitgevonden in $1947$, en i
 
 In figuur \ref{fig:sticky} vind je een kleine personage, Sticky, die verantwoordelijk is om een sluis te openen en te sluiten. Spijtig genoeg is Sticky niet de sterkste, en met een gewoon mechanisme zal het nooit lukken. Maar stel dat er een grote elektrische motor is die de tandwiel doet draaien, dan kan Sticky met één vinger de sluis openen en sluiten. De batterij en de motor doen eigenlijk al het werk voor Sticky.
 
-Dit is eigenlijk hoe een transistor werkt! Met een zwak controlesignaal (Sticky), kan je een grote stroom controleren. Een transistor kan als een schakelaar gebruikt worden: de stroom is dan ofwel helemaal  aan of helemaal uit. De tweede toepassing is als versterker: een kleine golf in het controlesignaal (Sticky maakt en golfje met de handvat van de motor) heeft een gigantische golf in de stroom als gevolg.
+Dit is eigenlijk hoe een transistor werkt! Met een zwak controlesignaal (Sticky), kan je een grote stroom controleren. Dit is heel vaak nuttig, omdat  signalen die komen uit optische sensoren, temperatuursensoren of micro's vaak heel zwak zijn.
+
+ Een transistor kan als een schakelaar gebruikt worden: de stroom is dan ofwel helemaal  aan of helemaal uit. De tweede toepassing is de versterker: een kleine golf in het controlesignaal (Sticky maakt en golfje met de handvat van de motor) heeft een gigantische golf in de stroom als gevolg.
+
 \begin{figure}[htbp]
 \centering
 	\begin{subfigure}[b]{0.45\linewidth}
@@ -459,7 +463,7 @@ De regels waaraan een bipolaire transistor zich moet houden zijn:
 	    I_C = \beta I_B
 	    \label{eq:hfe}
 	\end{align}
-	$±\beta$ (ook als $h_{FE}$ genoteerd) wordt de stroomversterkingsfactor genoemd, en kan typisch $50$ tot $250$ bedragen. Dit is waarom de nuttig is: een minuscuul klein basisstroom controleert een gigantische collectorstroom.
+	$±\beta$ (ook als $h_{FE}$ genoteerd) wordt de stroomversterkingsfactor genoemd, en is typisch groter dan $50$, en kan soms $800$ gaan. Dit is waarom de nuttig is: een minuscuul kleine basisstroom controleert een veel grotere collectorstroom.
 
 \end{enumerate}
 
@@ -485,58 +489,82 @@ In figuur \ref{fig:ges} vind je een audio-versterker, waar je de bipolaire trans
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.6\textwidth]{ges}
+	\includegraphics[width=0.8\textwidth]{ges}
 	\caption{Versterkerschakeling met de transistor.}
 	\label{fig:ges}
 \end{figure}
 
-In serie geschakeld met de spanningsbron $V_s$ is er een weerstand $R_s$ en een nieuwe component, de  capaciteit $C$. $R_s$ is de weerstand van de spanningsbron, die ons eigenlijk verveeld maar die in de werkelijkheid altijd aanwezig is. Het is de meeste tijd klein genoeg dat ingenieursstudenten hem vaak verwaarlozen ( doen alsof $R_s = 0 \Omega$). 
+In serie geschakeld met de spanningsbron $V_s$ is er een weerstand $R_s$ en een nieuwe component, de  capaciteit $C$. $R_s$ is de weerstand van de spanningsbron, die ons eigenlijk verveeld maar die in de werkelijkheid altijd aanwezig is. Het is de vaak klein genoeg dat ingenieursstudenten hem mogen verwaarlozen ( doen alsof $R_s = 0 \Omega$). 
 
 De capaciteit is een component die voldoet aan de wet : 
 \begin{align}
     I = C \cdot \frac{dV}{dt}
 \end{align}
 
-Dat betekent ruwweg dat capaciteiten alleen reageren op \emph{verandering in de spanning}, en niet op constante waarden. Zonder het te bewijzen kunnen we verklappen dat het gevolg van die capaciteit is dat de spanning in het knooppunt\footnote{Herriner U: Als we spreken van een spanning in een punt, bedoelen we eigenlijk de spanningsval tussen dat punt en de grond.} 1 de som gaat zijn van $V_s$ en van de spanning omwille van de weerstandsdeler $R_1,R_2$ en $V_{CC}$:
+Dat betekent ruwweg dat capaciteiten alleen reageren op \emph{verandering in de spanning}, en niet op constante waarden. Zonder het te bewijzen kunnen we verklappen dat het gevolg van die capaciteit is dat de spanning in het knooppunt\footnote{Herinner U: Als we spreken van een spanning in een punt, bedoelen we eigenlijk de spanningsval tussen dat punt en de grond.} 1 de som gaat zijn van $V_s$ en van de spanning omwille van de weerstandsdeler $R_1,R_2$ en $V_{CC}$:
 \begin{align}
     V_{B} = V_s + \frac{R_1}{R_1+R_2}V_{CC}
 \end{align}
 
 Om de versterker te ontwerpen moeten we de weerstanden $R_1,R_2,R_E$ en $R_C$ kiezen. Een eerste vergelijking die belangrijk gaan we nu afleiden: de spanningsversterking van dit netwerk.
 
-\paragraph*{Doe-het-zelf:} Vind een uitdrukking voor de spanning aan de collector $V_C$ in functie van de basisspanning $V_B$, en vind dat je de spanning $V_B$ versterkt. Deze vergelijkingen kunnen je helpen:
-\begin{align}
+\paragraph*{Doe-het-zelf:} Vind een uitdrukking voor de spanning aan de collector $V_C$ in functie van de basisspanning $V_B$, en vind dat je de spanning $V_B$ versterkt. We hebben volgende vergelijkingen die we kunnen gebruiken:
+\begin{itemize}
+	\item de spanningswet van Kirchoff
+	\begin{align}
+	V_{Re} + V_{CE} + V_{Rc} - V_{CC} = 0    
+	\end{align}
+	\item de transistorvergelijkingen
+	\begin{align}
     V_{BE} &= V_{B} - V_{E} = 0.7~V \\
-    I_C &\approx I_E
-\end{align}
+     I_C&\approx -I_E \\
+    V_{CE} &= V_C - V_E > 0
+	\end{align}
+	\item de weerstandsvergelijkingen
+	\begin{align}
+   	V_{Rc} &= R_C \cdot I_C \\
+   	V_{Re} &= - R_E \cdot  I_E
+	\end{align}
+	De wet van Ohm geldt als de spanning- en stroomrichting tegengesteld zijn. Indien ze in dezelfde richting zijn, komt er een minteken in de wet.
+\end{itemize}
+
 \textbf{Tip:} één manier om het te vinden: druk de stroom uit door $R_C$ met de wet van Ohm. Die is nodig om de spanning $V_E$ te vinden die je dan gebruikt om $V_B$ te vinden. Vorm de vergelijking dan om om $V_C$ te isoleren.
 \\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill 
+
 \begin{align}
     V_C = \ldots \ldots \ldots \ldots  \ldots  \ldots 
 \end{align}
 
 We kunnen de constante (DC) termen eventjes vergeten en drukken alleen de tijdsvariërende (AC) spanning gedeelte uit van $V_C$, die we met kleine letters noteren:
+
 \begin{align}
     v_c = - \frac{R_C}{R_E} \cdot v_b
 \end{align}
 
-Deze schakeling versterkt dus de spanningsgolf met een factor $- \frac{R_C}{R_E}$, de muziekgolf wordt dus omgedraaid en de amplitude versterkt! De andere DC waarde wilt alleen zeggen dat het middelpunt van de golf zich verplaatst, zoals je kan zien in figuur TOMAKA.e
+Deze schakeling versterkt dus de spanningsgolf met een factor $- \frac{R_C}{R_E}$, de muziekgolf wordt dus omgedraaid en de amplitude versterkt! De andere DC waarde wilt alleen zeggen dat het gemiddelde van de golf zich verplaatst, zoals je kan zien in figuur \ref{fig:golven}.
 
-We gaan nu een ontwerpmethode (een soort recept) volgen waar verschillende keuzes moeten gemaakt worden, waaruit de waardes voor de weerstanden uit volgen. Eens je de methode kent, kan je andere keuzes proberen maken en zien als het werkt: dit is wat designen is! Veel designers gaan het niet graag zeggen, maar een groot deel van ontwerp is trial en error: uitproberen tot dat het werkt. En daar is niets mis mee (als je maar niets opblaast)!
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.95\textwidth]{golven}
+	\caption{De ingangsgolf wordt door ons netwerk omgedraaid en versterkt, en het gemiddelde verschuift.}
+	\label{fig:golven}
+\end{figure}
+
+We gaan nu een ontwerpmethodevolgen waar verschillende keuzes moeten gemaakt worden, waaruit de waardes voor de weerstanden uit volgen. Eens je de methode kent, kan je andere keuzes proberen maken en zien als het werkt: dit is wat ontwerpen is! Niet alle designers gaan het graag zeggen, maar een groot deel van ontwerp is vallen en opstaan: uitproberen tot dat het werkt. En daar is niets mis mee (als je maar niets opblaast)!
 
 De methode gaat als volgt:
 \begin{enumerate}
-	\item Kies de typische stroom $I_C$. De maximumwaarde die de transistor aankan is $100~mA$, dus het moet kleiner. Te grote stromen gaan ook de batterij sneller leegzuigen, te kleine stromen kunnen de werking van het netwerk stopzetten. Er zijn nog veel andere voor- en nadelen die je kan opsommen voor te grote of te kleine stromen. We kiezen als voorbeeld:
+	\item Kies de typische stroom $I_C$. De maximumwaarde die de transistor aankan is $100~mA$, dus het moet kleiner. Te grote stromen gaan ook de batterij sneller leegzuigen, te kleine stromen kunnen de werking van het netwerk stopzetten. Er zijn nog  andere voor- en nadelen die je kan uitzoeken voor te grote of te kleine stromen. We kiezen als voorbeeld:
 \begin{align}
     I_C = 10 mA
 \end{align}
 
-	\item Kies een typisch voltage $V_C$, waar de muziekgolf rond gaat variëren. Dit noemen we het instelpunt. De spanning $V_C$ moet groter zijn dan $0.7~V$ (dat kan je afleiden uit de spanningswet van Kirchhoff en  $V_{CB} > 0$, en $V_{BE} = 0.7$). Een transistor kan de spanning aan zijn pinnen niet hoger krijgen dan zijn voeding. De maximum is dus $V_CC = 9~V$. Pas op, een batterij gaat slijten, na een tijdje kan de geleverde spanning zo laag als $7~V$ gaan. De voorbeeldkeuze die wie hier maken is
+	\item Kies een typisch voltage $V_C$, waar de muziekgolf rond gaat variëren. Dit noemen we het instelpunt. De spanning $V_C$ moet groter zijn dan $0.7~V$ (dat kan je afleiden uit de spanningswet van Kirchhoff en  $V_{CB} > 0$, en $V_{BE} = 0.7$). De transistor kan hier de spanning aan zijn pinnen niet hoger krijgen dan zijn voeding. De maximum is dus $V_{CC} = 9~V$. Pas op, een batterij gaat slijten, na een tijdje kan de geleverde spanning zo laag als $7~V$ gaan. De voorbeeldkeuze die wie hier maken is:
 
 \begin{align}
     V_C =  3.5~V
 \end{align}
-	 Dat is ongeveer in het midden tussen $7~V$ en $0.7~V$. Waarom zou je het midden kiezen?
+	 Dat is ongeveer in het midden tussen $7~V$ en $0.7~V$. Je kan snappen waarom het midden een mogelijke keuze is door een tekening te maken zoals in figuur \ref{fig:golven}. Dit is niet de enige mogelijkheid!
 
 	\item Laatste keuze: kies een versterkingsfactor $- \frac{R_C}{R_E}$. Als je de amplitude van de inkomende golf $V_S$ kent, dan kan de versterkingsfactor zo kiezen dat je uitgaande spanningsgolf zeker niet boven $V_{CC}$ komt, of onder $0$ V (=de grond). Spijtig genoeg is er geen standaardwaarde voor de amplitude van een muzieksignaal, maar het is meestal klein en ongeveer  $200~mV$. We kunnen bijvoorbeeld zeggen dat we de amplitude naar $1V$ willen krijgen, we hebben dus een versterkingsfactor nodig van $-5$.
 	\begin{align}
@@ -549,17 +577,18 @@ Vergeet zeker niet dat dit niet vaste keuzes zijn, er zijn veel andere mogelijkh
 \paragraph*{Doe-het-zelf:} Je kent nu alles wat nodig is om de weerstanden $R_{E}$ en $ R_{C}$ te bepalen. \textbf{Tip:} Uit $I_C$ en $V_C$ kan je de waarde $R_C$ vinden.
 \\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill 
 \begin{align}
-    R_C = \ldots
-    R_E = \ldots
+    R_C &= \ldots \\
+    R_E &= \ldots
 \end{align}
 
 De vaste waarde waarond $V_B$ gaat variëren ligt nu al vast (omdat $V_{BE} = 0.7V$), en noemen we het biaspunt. We kunnen die vastleggen met de weerstandsdeler $R_1$ en $R_2$. Alhoewel het geen zuivere weerstandsdeler is (normaal gezien is niets aangesloten aan een weerstandseler), kunnen toch de formule van de weerstandsdeler gebruiken hier.
 
-\paragraph*{Doe-het-zelf:} Bereken het biasvoltage $V_B$. Kies dan de weerstand $R_2$ zodat $V_B$ de gewenste waarde heeft. Het staat al vast dat $R_1 = 1k\Omega$. \textbf{Tip:Herriner U dat $V_{CC} = 9V$ en de formule van de weerstandsdeler.} 
+\paragraph*{Doe-het-zelf:} Bereken het biasvoltage $V_B$. Kies dan de weerstand $R_2$ zodat $V_B$ de gewenste waarde heeft. Het staat al vast dat $R_1 = 1k\Omega$. \textbf{Tip:} Herinner U dat $V_{CC} = 9V$ en de formule van de weerstandsdeler.
 \\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill \\.\dotfill 
+
 \begin{align}
-    R_1 = 1k\Omega \\
-    R_2 = \ldots
+    R_1 &= 1k\Omega \\
+    R_2 &= \ldots
 \end{align}
 
 En voor dat je het weet, hebben we de versterker helemaal gemaakt! Je kan zien dat we vermogen hebben versterkt van het ingangssignaal:
@@ -571,14 +600,27 @@ En voor dat je het weet, hebben we de versterker helemaal gemaakt! Je kan zien d
 
  De stroom en de spanning zijn  versterkt, dus het vermogen is gestegen! We zijn vertrokken van enkele $\mu$W en we hebben nu uiteindelijk enkele $m$W. 
 
+\begin{center}
+	\noindent \fbox{ 
+    \parbox{0.8\textwidth}{
+Samenvatting van de gekozen weerstanden:
+\begin{align}
+    R_1 &= \ldots \\
+    R_2 &= \ldots \\
+    R_E &= \ldots \\
+    R_C &= \ldots
+\end{align}
+    }}
+\end{center}
+
 \subsection{De magische zwarte doos}
 
 \subsection{De luidspreker}
 
 \section{Conclusie}
 
-\section{Extra oefeningen}
-\subsection{De hoogdoorlaarfilter en de capaciteit.}
+\section{Nagerecht}
+\subsection{De hoogdoorlaatfilter en de capaciteit.}
 \subsection{Hoe lang gaat de versterker mee?}
 
 \end{document}
