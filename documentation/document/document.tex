@@ -81,10 +81,10 @@ Stromen en spanning kunnen constant over de tijd zijn, we spreken dan van DC (Di
 
 Heel de magie van de elektronica zit in de componenten die voldoen aan zekere I-V (stroom-spanning) relaties die worden bepaald dankzij hun fysica. Bijvoorbeeld: In de weerstand is de stroom evenredig met de spanning en in de diode vloeit stroom maar in één richting. We gaan interessante componenten leren kennen en gebruiken, en gaan onmidellijk beginnen met de gewoonste (en meest gebruikte) component: de weerstand.
 
- %Elke component in de elektronica voldoet aan fysische wetten die zijn stroom en de spanning bepalen. Laten we kennismaken met die fysische wetten, en daarna we gaan onmiddellijk ons eerste netwerk oplossen. We bekijken twee basiselementen van de elektronica: de weerstand en de spanningsbron.
+% Elke component in de elektronica voldoet aan fysische wetten die zijn stroom en de spanning bepalen. Laten we kennismaken met die fysische wetten, en daarna we gaan onmiddellijk ons eerste netwerk oplossen. We bekijken twee basiselementen van de elektronica: de weerstand en de spanningsbron.
 
 \subsection{De weerstand}
-
+TEKENING!!!!
  Een weerstand (figuur \ref{subfig:componenten}) is een geleider die voldoet aan de \textbf{wet van Ohm} (stroom en spanning zijn evenredig): 
 \begin{align}
 	V &= R \cdot I
@@ -614,9 +614,39 @@ Samenvatting van de gekozen weerstanden:
 \end{center}
 
 \subsection{De magische zwarte doos}
+Dankzij de transistor-schakeling hebben we meer vermogen, maar een luidspreker heeft enkele honderden milliwatts nodig om luid genoeg te klinken, dat is meer dan enkele milliwatts we nu hebben! We gaan dus het signaal nog eens versterken! Deze keer gaat onze aanpak verschillend zijn: we gaan geen versterker zelf maken, maar gaan een IC (Integrated Circuit of geïntegreerde schakeling) gebruiken die daarvoor gemakt is. Een IC is een volledig elektronisch netwerkje gemaakt op een plaatje silicium, die dan is verpakt in een behuizing uit kunststof met pinnetjes om het te verbinden met andere circuits, zoals je kan zien in figuur \ref{fig:IC}.
 
+\begin{figure}[htbp]
+\centering
+	\begin{subfigure}[b]{0.45\linewidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{IC}
+		\caption{Voorbeelden van IC's, in een DIP (Dual-in-line Packaging) behuizing.}
+		\label{subfig:IC_foto}
+	\end{subfigure}
+	~
+	\begin{subfigure}[b]{0.45\linewidth}
+		\centering
+	\includegraphics[width=0.5\textwidth]{IC_doorsnede}
+	\caption{Doorsnede van een IC, het eigenlijk circuit (of chip) wordt verbonden met de buitenwereld via de pinnetjes van de behuizing. }
+	\label{subfig:IC_doorsnede}
+	\end{subfigure}
+	\caption{Geïntegreerde schakelingen.}
+	\label{fig:IC}
+\end{figure}
+
+We gaan hier een IC gebruiken die gemaakt is om audio te versterken, de LM-386. IC's worden vaak benoemd met een combinatie van letters en getallen. Alle IC's hebben een handleiding die uitleg geeft over hun werking, die we een datasheet noemen. In de datasheet van de LM-386 staat hoe je het moet gebruiken om een versterker te maken met spanningsversterkingfactor $20$.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.6\textwidth]{IC_versterker}
+	\caption{Schakeling uit de datasheet van de LM-386 voor een spanningsversterking van 20. De getallen duiden de pinnen aan van het IC, de driehoek is het symbool voor het IC. }
+	\label{fig:IC_versterker}
+\end{figure}
+
+Een IC kan mysterieus lijken maar bevat eigenlijk een heel klein netwerk met gewone componenten, hoofdzakelijk transistoren maar ook weerstandjes, capaciteiten en diodes! Die componenten zijn dan niet...
 \subsection{De luidspreker}
-
+boom bass
 \section{Conclusie}
 
 \section{Nagerecht}
