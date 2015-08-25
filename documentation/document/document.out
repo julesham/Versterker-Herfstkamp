@@ -4,14 +4,15 @@
 \BOOKMARK [3][-]{subsubsection.2.1.1}{Serie en parallel}{subsection.2.1}% 4
 \BOOKMARK [2][-]{subsection.2.2}{De spanningsbron}{section.2}% 5
 \BOOKMARK [2][-]{subsection.2.3}{Mini-netwerk}{section.2}% 6
-\BOOKMARK [2][-]{subsection.2.4}{Netwerken}{section.2}% 7
-\BOOKMARK [1][-]{section.3}{Bouwstenen van de e-VUBOX}{}% 8
-\BOOKMARK [2][-]{subsection.3.1}{Introductie: het versterken van audio}{section.3}% 9
-\BOOKMARK [2][-]{subsection.3.2}{De volumeknop is een spanningsdeler}{section.3}% 10
-\BOOKMARK [2][-]{subsection.3.3}{Het statusledje is een diode}{section.3}% 11
-\BOOKMARK [2][-]{subsection.3.4}{De versterker is een transistor}{section.3}% 12
-\BOOKMARK [3][-]{subsubsection.3.4.1}{De bipolaire npn transistor}{subsection.3.4}% 13
-\BOOKMARK [3][-]{subsubsection.3.4.2}{Het versterkings-netwerk}{subsection.3.4}% 14
-\BOOKMARK [2][-]{subsection.3.5}{De magische zwarte doos is een IC}{section.3}% 15
-\BOOKMARK [2][-]{subsection.3.6}{De luidspreker is een \(slechte\) weerstand.}{section.3}% 16
-\BOOKMARK [1][-]{section.4}{Conclusie}{}% 17
+\BOOKMARK [2][-]{subsection.2.4}{De capaciteit}{section.2}% 7
+\BOOKMARK [2][-]{subsection.2.5}{Netwerken}{section.2}% 8
+\BOOKMARK [1][-]{section.3}{Bouwstenen van de e-VUBOX}{}% 9
+\BOOKMARK [2][-]{subsection.3.1}{Introductie: het versterken van audio}{section.3}% 10
+\BOOKMARK [2][-]{subsection.3.2}{De volumeknop: de spanningsdeler}{section.3}% 11
+\BOOKMARK [2][-]{subsection.3.3}{Het statusledje: de diode}{section.3}% 12
+\BOOKMARK [2][-]{subsection.3.4}{De versterker: de transistor}{section.3}% 13
+\BOOKMARK [3][-]{subsubsection.3.4.1}{De bipolaire npn transistor}{subsection.3.4}% 14
+\BOOKMARK [3][-]{subsubsection.3.4.2}{Het versterkings-netwerk}{subsection.3.4}% 15
+\BOOKMARK [2][-]{subsection.3.5}{De magische zwarte doos: de ge\357ntegreerde schakeling}{section.3}% 16
+\BOOKMARK [2][-]{subsection.3.6}{De luidspreker: de \(slechte\) weerstand.}{section.3}% 17
+\BOOKMARK [1][-]{section.4}{Conclusie}{}% 18
