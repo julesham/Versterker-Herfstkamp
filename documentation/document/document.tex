@@ -3,7 +3,7 @@
 % Vrije Universiteit Brussel - Dept. ELEC
 % Augustus 2015
 
-\title{Project Ingenieurswetenschappen: \\ Elektronisch ontwerp van de e-VUBOX~speaker}
+\title{Project Ingenieurswetenschappen: \\ Elektronisch ontwerp van de e-VUBOX}
 \author{Vrije Universiteit Brussel}
 \date{Versie 08.2015}
 
@@ -13,7 +13,7 @@
 	\usepackage[T1]{fontenc}
 	\usepackage[dutch]{babel}
 	\usepackage{amsmath}
-
+\usepackage{pdflscape}
 	\newtheorem{DIY}{Doe-het-zelf}
 \usepackage{multicol}
 	%%% FIGURES %%%
@@ -40,18 +40,25 @@
 	\section{Doelstelling}
 		Elektronische uitvindingen maken deel uit van de grote revoluties van onze tijd. Van eenvoudige rekenmachines tot de meest geavanceerde computers, spelconsoles, GPS-satellieten, zelfrijdende auto's, hersenimplantaten, pratende robots die duizenden objecten per seconde herkennen\ldots Die verbluffende uitvindingen worden dagelijks gemaakt en gebruikt.
 
-		Al die fascinerende ontwikkelingen kunnen de ambitie geven om zelf elektronische wondermachines te maken, als je maar wist hoe die miraculeuse elektronica in mekaar zat. Goed nieuws, dit is het net doel van dit project. We gaan de mysteries van de elektronica ontfutselen door \textbf{een audio-versterker te bouwen, de e-VUBOX}. Je zal snel zien dat elektronische circuits niet (helemaal) magisch zijn en daarenboven goedkoop zijn om zelf te maken!
+		Al die fascinerende ontwikkelingen kunnen de ambitie geven om zelf elektronische wondermachines te maken, als je maar wist hoe die miraculeuse elektronica in elkaar zat. Goed nieuws, dit is het net doel van dit project. We gaan de mysteries van de elektronica ontfutselen door \textbf{een audio-versterker te bouwen, de e-VUBOX}. De e-VUBOX is een versterker, die de muziek van een  muziekspeler kan versterken om het luid te kunnen afspelen (figuur~\ref{fig:principe}).  Je zal snel zien dat elektronische circuits niet (helemaal) magisch zijn!
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[scale=0.85]{principe}
+		\caption{Principeschema van het project. We gaan muziek versterken, en gaan de mysteries van de elektronica binnen de e-VUBOX ontsluieren.}
+		\label{fig:principe}
+	\end{figure}
 
 		%We gaan beginnen met een inleiding in de elektronica. Daar gaan we kennismaken met basisregels die nodig zijn om componenten en schakelingen te begrijpen en zelf te ontwerpen. Daarna stappen we over naar naar complexere onderdelen en gaan we onze eigen versterker bouwen.
 
 		%Waarom zou je elektronica willen leren? Wel, elektronica kan interessant zijn om te bestuderen omdat veel leuke en/of nuttige objecten mogelijk zijn dankzij de elektronica. Alledaagse objecten zoals een GSM of een computer bevatten natuurlijk veel elektronica, maar ook in het ziekenhuis kan je ook toestellen vinden die dagelijks levens redden, zoals een MRI-scanner of een elektrocardiogram. Zelfs de wereld van entertainement zit boordevol elektronische netwerken: in cameras, schermen, spelconsoles, virtuele werkelijkheid, enz.. Veel geavanceerde technologi\"een zoals het internet, zelfrijdende autos, de automatische piloot in vliegtuigen en andere robots met artifici\"ele intelligentie zouden ook niet mogelijk zijn zonder o.a. ingenieurs in de elektronica.
 
 		% Indien je dit al hebt gezien, mag je het deel ``Elektronica: componenten en schakelingen'' snel overlopen en onmiddellijk beginnen met het hoofdstuk \ref{sec:bouwstenen} op pagina \pageref{sec:bouwstenen}. 
+
 		Laten we beginnen met een overzicht van de wetten en vuistregels van de elektronica. Als je al een basis hebt in de elektronica, mag je onmiddellijk beginnen met hoofdstuk \ref{sec:bouwstenen}.
 	\section{Elektronica: componenten en netwerken}
 
 		De Van Dale definie\"ert elektronica als "de wetenschap die studie maakt van de geleiding van elektronen en van de mogelijke toepassingen daarvan".
-		Dankzij het schakelen van elektronische componenten in een netwerk kunnen we de elektronen temmen zodat ze ons helpen om specifieke taken uit te voeren, zoals het bewegen van een arm van een robot of het versterken van muziek.
+		Dankzij het schakelen van elektronische componenten in een netwerk kunnen we de elektronen ``temmen'' zodat ze ons helpen om specifieke taken uit te voeren, zoals het bewegen van een arm van een robot of het versterken van muziek.
 
 		% Dit doen we door netwerken van elektronische componenten te bouwen. Elektronische componenten zijn eenvoudige bouwstenen waarmee we complexe netwerken kunnen bouwen op zo een manier dat die specifieke taken uitvoeren: het ontvangen en versturen van de meest belangrijke berichtjes via Messenger, het afbeelden van een foto op een scherm en vele andere toepassingen die je elke dag tegenkomt. %Je hebt waarschijnlijk een object vol elektronica in jouw broekzak op dit ogenblik!
 
@@ -63,20 +70,24 @@
 			\item de \textbf{stroom} gemeten in amp\`ere (A), vaak aangeduid met de letter $I$. Dit stelt de verplaatsing voor van een hoeveelheid ladingen (hier elektronen) door de component per tijdseenheid.
 		\end{enumerate}
 
-		Stromen en spanning kunnen constant zijn over de tijd, we spreken dan van DC (Direct Current). Als ze veranderen met de tijd, spreken we van AC (Alternating Current) en  kunnen ze beschreven worden door wiskundige functies zoals bijvoorbeeld:
-		\begin{align}
-		     I(t) = 0.1 \text{A} \cdot \sin (20\text{ Hz}\cdot t) \\
-		     V(t) = 4 \text{V} \cdot e^{-\frac{t}{10 s}}
-		 \end{align} 
-		 waar $t$ de tijd is in seconden.
+		Stromen en spanning kunnen constant zijn over de tijd, we spreken dan van DC (Direct Current). Als ze veranderen met de tijd, spreken we van AC (Alternating Current).
 
-		Elektrisch vermogen  is een derde grootheid die belangrijk is in de elektronica, vaak is de elektrische energie dat gebruikt wordt door een component van belang. Het elektrisch vermogen dat een component verbruikt is het product van de stroom en de spanning:
+
+% en  kunnen ze beschreven worden door wiskundige functies zoals bijvoorbeeld:
+%		\begin{align}
+%		     I(t) = 0.1 \text{A} \cdot \sin (20\text{ Hz}\cdot t) \\
+%		     V(t) = 4 \text{V} \cdot e^{-\frac{t}{10 s}}
+%		 \end{align} 
+%		 waar $t$ de tijd is in seconden.
+
+
+
+		Voor dat we beginnen met componenten te ontdekken, is er een derde grootheid die belangrijk is in de elektronica : het elektrisch vermogen.  Dat stelt de gebruikte elektrische energie per tijdseenheid voor. Het elektrisch vermogen dat een component verbruikt is het product van de stroom en de spanning:
 			\begin{align}
 			     P = V \cdot I
 			     \label{eq:vermogen}
 			 \end{align} 
-			 met $P$ het vermogen in Watt, $V$ het voltage over de component en $I$ de stroom door de component.
-
+			 met $P$ het vermogen in Watt, $V$ het voltage over de component en $I$ de stroom door de component. De componenten gaan dat elektrisch vermogen vaak omvormen naar anderen energievormen, zoals licht of warmte.
 
 		\begin{figure}[hbtp]
 			\centering
@@ -97,7 +108,10 @@
 			\label{fig:component_en_schakeling}
 		\end{figure}
 
-		Heel de magie van de elektronica zit in de I tot V (stroom-spanning) functies waaraan de componenten voldoen. Die functies zijn gevonden met behulp van de fysica, en worden door ingenieurs gebruikt om netwerken te ontwerpen. We gaan enkele componenten leren kennen en gebruiken, en gaan onmiddellijk beginnen met de gewoonste (en meest gebruikte) component: de weerstand.
+		\paragraph*{Intermezzo:} Elektrische ladingen kunnen we niet zien, en daarom is het soms moeilijk om ze te begrijpen. Een vaak gebruikte manier om elektriciteit toch eenvoudig voor te stellen is door elektrische ladingen te vergelijken met water. Zoals elektrische ladingen onder invloed van een spanningsverschil een elektrische stroom opwekken door een geleider, gaat water onder invloed van een (water)drukverschil een waterstroom opwekken door een buis. Er werd lang effectief gedacht dat elektriceit een vloeistof was, de benamingen stroom en spanning stammen nog uit die tijd. \footnote{\url{http://galileoandeinstein.physics.virginia.edu/more_stuff/E&M_Hist.html}}
+
+
+		Heel de magie van de elektronica zit in de I tot V (stroom-spanning) functies waaraan de componenten voldoen. Die functies zijn gevonden met behulp van de fysica, en worden door ingenieurs gebruikt om netwerken te ontwerpen. We gaan enkele componenten leren kennen en gebruiken, en gaan onmiddellijk beginnen met de eenvoudigste (en één van de belangrijkste) component: de weerstand.
 
 		% Elke component in de elektronica voldoet aan fysische wetten die zijn stroom en de spanning bepalen. Laten we kennismaken met die fysische wetten, en daarna we gaan onmiddellijk ons eerste netwerk oplossen. We bekijken twee basiselementen van de elektronica: de weerstand en de spanningsbron.
 
@@ -108,21 +122,40 @@
 				\caption{De weerstand: schematische voorstelling en re\"eel component.}
 				\label{fig:weerstand}
 			\end{figure}
-			 Een weerstand (figuur \ref{fig:weerstand}) is een geleider die voldoet aan de \textbf{wet van Ohm} die stelt dat de stroom en spanning evenredig zijn: 
+			 Een weerstand (figuur \ref{fig:weerstand}) is een geleider die voldoet aan de \textbf{wet van Ohm} die zegt dat de stroom en spanning evenredig zijn: 
 			\begin{align}
 				V &= R \cdot I
 			\end{align} 
-			$R$ is een eigenschap van de weerstand die men ook elektrische weerstand noemt, met eenheid Ohm\footnote{Georg Simon Ohm (1787 - 1854) was een Duits wiskundige en natuurkundige, ontdekker van de wet van Ohm in 1827.} ($\Omega$). $V$ is de spanning over de weerstand en $I$ de stroom door de weerstand.
+			$R$ is een eigenschap van de weerstand die men ook elektrische weerstand noemt, met eenheid Ohm\footnote{Georg Simon Ohm (1787 - 1854) was een Duits wiskundige en natuurkundige, ontdekker van de wet van Ohm in 1827.} ($\Omega$). $V$ is de spanning over de weerstand en $I$ de stroom door de weerstand. Vergeet zeker niet dat de richting van de pijlen belangrijk is.
 
+			Niet alle weerstandwaarden bestaan in de handel, ze worden gemaakt in series met vaste waarden, zoals de E12 of E24 series (figuur \ref{fig:e12}). De ingenieur moet dan inschatten welke waarde te gebruiken, omdat de waarden die we uitrekenen nooit bestaan. Nemen we een beetje groter of een beetje kleiner? Dit hangt af van geval tot geval!
+
+			\begin{figure}[htbp]
+				\centering
+				\includegraphics{e12}
+				\caption{
+				De vaak gebruikte E12 weerstanden-serie
+				De kleurencode van de weerstand geeft de waarde aan. De weerstanden die bestaan zijn deze waarden, of tienvouden ervan. Bijvoorbeeld: de weerstanden 0.47 $\Omega$,  4.7 $\Omega$,47 $\Omega$, 470 $\Omega$, 4.7 k$\Omega$, etc\ldots (Fig. door \href{https://en.wikipedia.org/wiki/User:Pengo}{Peter Halasz})
+				} 
+				\label{fig:e12}
+			\end{figure}
 			%Een manier om weerstanden te bezien is als belemmers van stroom. Een grote weerstand heeft een hoge spanningsval nodig om veel stroom te verplaatsen. 
 
 			%Zo dadelijk volgt een voorbeeld, we gaan eerst zien wat weerstanden in serie en in parallel zijn, en kennismaken met de spanningsbron.
+			Het waterequivalent van een weerstand is een vernauwde buis (figuur~\ref{fig:waterweerstand}). Om  stroom te laten vloeien door een nauwe buis, moet er een drukverschil zijn tussen de uiteinden.
+
+			\begin{figure}[htbp]
+				\centering
+				\includegraphics{waterweerstand}
+				\caption{De waterweerstand. Hoe groter de weerstand, hoe nauwer de buis.}
+				\label{fig:waterweerstand}
+			\end{figure}
 
 		\subsubsection{Serie en parallel}
 			\label{sssec:serie_en_parallel}
 			Twee weerstanden kunnen door \'e\'en  weerstand worden vervangen in twee gevallen (zie figuur \ref{fig:serie_en_parallel}):
 
-			\begin{itemize}
+			\begin{enumerate}
 				\item twee weerstanden zijn \textbf{in serie}: ze hebben \'e\'en gemeenschappelijke pin, en dezelfde stroom vloeit door de twee weerstanden, dan is de vervangingsweerstand :
 				\begin{align}
 					R_{v} = R_1 + R_2.
@@ -135,7 +168,7 @@
 				\end{align}
 
 				Door weerstanden in parallel te plaatsen, krijg je een kleinere weerstand.
-			\end{itemize}
+			\end{enumerate}
 
 			\begin{figure}[hbtp]
 				\centering
@@ -163,13 +196,13 @@
 				\begin{subfigure}[b]{0.4\linewidth}
 					\centering
 					\includegraphics{vc}
-					\caption{Constante spanningsbron.}
+					\caption{Constante (DC) spanningsbron, met als voorbeeld batterijen.}
 				\end{subfigure}
 				~
 				\begin{subfigure}[b]{0.4\linewidth}
 					\centering
 					\includegraphics{vt}
-					\caption{Vari\"erende spanningsbron.}
+					\caption{Vari\"erende (AC) spanningsbron, met als voorbeeld de contactdoos (stopcontact), die een een spanningsgolf van 230~V golf aanlegt.}
 				\end{subfigure}
 				\caption{Spanningsbronnen.}
 				\label{fig:vbron}
@@ -180,10 +213,17 @@
 			 
 			 Een 9V-batterij is een voorbeeld van een spanningsbron, die de spanning over zijn pinnen vastlegt op constant $9~V$. Een spanningsbron kan een constante spanning opleggen, maar niets verbiedt dat de spanning met de tijd verandert. Beide type bronnen hebben hun eigen schematische voorstelling die je kan vinden in figuur \ref{fig:vbron}.
 
+			 Het waterequivalent kan een pomp zijn die de druk tussen zijn uiteinden vastlegt of een watertoren die druk uitoefent omwille van zijn hoogteverschil met de grond (figuur \ref{fig:waterbron}).
+
+		\begin{figure}[htbp]
+				\centering
+				\includegraphics{waterbron}
+				\caption{De waterdrukbron, die een drukverschil oplegt tussen de grond en zijn uiteinde.}
+				\label{fig:waterbron}
+			\end{figure}
 		\subsection{Mini-netwerk}
 			We gaan binnenkort wetten ontdekken van nog meer componenten, maar met onze voorlopige kennis kunnen we al volgend netwerk oplossen!
 
-			\textbf{Voorbeeld:}
 			\begin{figure}[h!]
 				\centering
 				\includegraphics{vbweerstand.pdf}
@@ -191,14 +231,14 @@
 				\label{fig:vbweerstand}
 			\end{figure}
 
-			Een spanningsbron legt en spanning op van $50~V$ over een weerstand van $200~\Omega$. Men kan de stroom door de weerstand berekenen op de volgende manier:
+			\begin{DIY} 
+			Een spanningsbron legt een wisselspanning (AC) op met een amplitude van $240~V$ over een weerstand van $80~\Omega$. Dit is wat er gebeurt in een broodrooster, de weerstand is de gloeidraad die opwarmt een het brood bakt. Wat is de amplitude van de  stroom $I$ door de weerstand? Wat is het elektrisch vermogen $P$ van de weerstand, die dan in warmte wordt omgevormd?
 			\begin{align*}
-				\text{(Wet van Ohm)}~&V = R\cdot I \Leftrightarrow I = \frac{V}{R} \\ \Leftrightarrow~&I = \frac{50~V}{200~\Omega}= 0,25~A
+				\text{Wet van Ohm:}~&V = R\cdot I \\
+				\text{Vermogen:}~&P = V\cdot I \\
 			\end{align*}
-
-			\begin{DIY} Wat is de waarde $R$ van een weerstand waarover een spanning van $V = 25~V$ is en waardoor een stroom van $I = 0.1~A$ loopt?
 			\begin{align}
-			    R = \ldots
+			    I&= \ldots & P&= \ldots 
 			\end{align}
 			\end{DIY}
 
@@ -227,10 +267,19 @@
 		Een diepgaande studie van de capaciteit is tijdrovend en nutteloos voor onze toepassing, wij gaan capaciteiten enkel  gebruiken voor twee functies:
 		\begin{enumerate}
 			\item Ontkoppeling: Omdat een capaciteit alleen reageert op verandering van spanning, laat het geen DC (constante) stroom door. We gaan dit gebruiken om golvende signalen door te laten, maar constante signalen tegen te houden.
-			\item Hulpbatterij: capaciteiten kunnen zich gedragen zoals mini-batterijen die veel stroom kunnen leveren op een korte tijd, dit kan helpen wanneer de schakeling meer stroom vraagt dan de batterij kan leveren.
+			\item Hulpbatterij: capaciteiten kunnen zich gedragen zoals mini-batterijen die veel stroom kunnen leveren op een korte tijd, dit kan helpen wanneer de schakeling meer stroom vraagt dan de batterij kan leveren. Een voorbeeld daarvan is de defribillator, waar een hoogspanningscapaciteit wordt opgeladen, en in \'e\'en schok wordt ontladen op het hart van een pati\"ent.
 		\end{enumerate}
+		Pas op: zogenaamde elektrolytische capaciteiten hebben een richting, die mag je niet omgekeerd plaatsen. De richting wordt aangeduid met een + op een van de pinnen.
 
-		Elektronica is meer dan een componenten alleen, ze moeten ook aan merkaar geschakeld worden, dus laten we maar een zien hoe netwerken zich gedragen.
+		Het waterequivalent van de capaciteit is een rubberen membraan in een buis, de capaciteitswaarde stelt dan de dikte van de membraan voor. Je kan door een membraan geen water laten stromen. Maar als er het water golft gaat de membraan bewegen en de golf doorgeven. Het is ook mogelijk om de membraan hard op te spannen en dan ineens los te laten om een stroompuls te geven. Dat stelt dan de batterijwerking voor.
+		\begin{figure}[htbp]
+				\centering
+				\includegraphics{watercap}
+				\caption{De watercapaciteit, die kan voorgesteld worden als een rubberen membraan. De stroomrichting aangegeven met pijlen.}
+				\label{fig:watercap}
+			\end{figure}
+
+		Elektronica is meer dan een componenten op hun eigen, ze moeten geschakeld worden in netwerken! Laten we maar een zien hoe netwerken zich gedragen.
 
 		\subsection{Netwerken}
 
@@ -262,7 +311,7 @@
 
 			\paragraph*{Voorbeeld:} De stroomwet (figuur \ref{subfig:kcl}) wordt toegepast als volgt: kies een knooppunt in een netwerk. Beschouw alle takken die dat knooppunt raken, en de bijhorende stromen. Als je alle stromen optelt die \textbf{naar} het knooppunt wijzen, dan is dat gelijk aan alle stromen die \textbf{weg} van het knooppunt wijzen.
 
-			Voor dat we spanningswet toepassen, hebben we de betekenis van het symbool \includegraphics[height=1em]{gnd.pdf} nodig. Dit symbool wordt de \textbf{grond} genoemd. Het is geen component, maar een manier aan te duiden dat alle punten met dat symbool verbonden zijn. Je mag dus een connectie tekenen tussen alle pinnen die aan de grond verbonden zijn. Herinner U dat een spanning altijd gedefinieerd is tussen twee punten, vaak wordt de grond gebruikt als een van die twee punten, en we zeggen dat de grond op 0 V is.
+			Voor dat we spanningswet toepassen, hebben we de betekenis van het symbool \includegraphics[height=1em]{gnd.pdf} nodig. Dit symbool wordt de \textbf{grond} genoemd. Het is geen component, maar een manier aan te duiden dat alle punten met dat symbool verbonden zijn. Je mag dus een connectie tekenen tussen alle pinnen die aan de grond verbonden zijn. Vergeet niet dat een spanning altijd gedefini\"eerd is tussen twee punten, vaak wordt de grond gebruikt als een van die twee punten, en we zeggen dat de grond op 0 V is.
 
 			\paragraph*{Voorbeeld:} De spanningswet (figuur \ref{subfig:kvl}) pas je zo toe: vind een gesloten lus in het netwerk (vergeet niet dat alle pinnen aan grond met elkaar verbonden zijn). Teken een lus met een zekere richting in het netwerk. Schrijf de som van de spanningen rekening houdend met de volgende regels:
 
@@ -271,13 +320,12 @@
 			 	\item Als de spanning tegen de lus ingaat, dan krijgt die een negatief teken.
 			 \end{enumerate}
 
-
 			\paragraph*{Fun fact:} Je kan de vergelijkingen voor serie en parallel weerstanden (sectie \ref{sssec:serie_en_parallel}) afleiden met behulp van de wetten van Kirchhoff en de wet van Ohm.
 
 			\begin{DIY} Pas de stroomwet van Kirchhoff toe in figuur \ref{subfig:kcl_oef}, en vind de missende stromen. Doe hetzelfde voor de spanningen in figuur \ref{subfig:kvl_oef}.
 			\begin{align*}
-			    I_1 &= \ldots \\
-			    V_1 &= \ldots 
+			    I_S &= \ldots & V_1 = \ldots\\
+			    I_R &= \ldots & V_2 = \ldots
 			\end{align*}
 			\end{DIY}
 
@@ -292,7 +340,7 @@
 				~
 				\begin{subfigure}[b]{0.45\linewidth}
 					\centering
-					\includegraphics{kvl_oef.pdf}
+					\includegraphics[width=\linewidth]{kvl_oef.pdf}
 					\caption{Vind $V_R$ en $U_C$. }
 					\label{subfig:kvl_oef}
 				\end{subfigure}
@@ -300,12 +348,22 @@
 			\label{fig:kirchoff_oef}
 			\end{figure}
 
-			Dit be\"eindigt de kennismaking met de elektronica. Je hebt nu alle basis die nodig is om aan de bouw van een versterker te beginnen! Daar gaan we alleen nieuwe componenten leren kennen zoals de diode en de transistor, maar voor de rest is er niets nieuws onder de zon!
+			Dit be\"eindigt de kennismaking met de elektronica. Je hebt nu alle basis die nodig is om aan de bouw van een versterker te beginnen! Daar gaan we alleen nieuwe componenten leren kennen zoals de diode en de transistor, maar voor de rest komt er niets nieuws onder de zon!
 
 	\section{Bouwstenen van de e-VUBOX}
 	\label{sec:bouwstenen}
-		In dit deel gaan we stap voor stap de onderdelen van onze versterker bouwen. We beginnen met een volumeregelaar, omdat we alles al kennen om die te maken. We gaan dan een simpele statusledje ontwerpen zodat we weten wanneer onze versterker aan is. Daarna houden we ons bezig met de eigenlijke versterking en gaan we kennismaken met de transistor die ons daarmee gaat helpen. 
-		Als laatste stap gaan we kennismaken met een ge\"integreerde schakeling. Maar eerst en vooral: waarom en hoe versterk je muziek?
+		In dit deel gaan we stap voor stap de onderdelen van onze versterker ontwerpen. We beginnen met een volumeregelaar. We gaan dan een simpele statusledje ontwerpen zodat we weten wanneer onze versterker aan is, het gaat ook minder fel branden wanneer de batterij vervangen moet worden. Daarna houden we ons bezig met de eigenlijke versterking en gaan we kennismaken met de transistor die ons daarmee gaat helpen. 
+		Als laatste stap gaan we kennismaken met een ge\"integreerde schakeling. 
+
+		\begin{figure}[htbp]
+				\centering
+				\includegraphics[scale=3]{pcb}
+				\caption{Het circuit met de onderdelen die we gaan ontwerpen. 1) Statusledje 2) Versterker 3) Volumeknopje 4) Ge\"integreerde schakeling}
+				\label{fig:pcb}
+			\end{figure}
+
+
+		Maar eerst en vooral: waarom en hoe versterk je muziek?
 
 		\subsection{Introductie: het versterken van audio}
 
@@ -326,16 +384,16 @@
 			De microfoon gaat die drukgolf omvormen naar een spanningsgolf, met dezelfde frequentie (zie figuur \ref{fig:micro}).
 			\begin{figure}[htbp]
 				\centering
-				\includegraphics{micro}
+				\includegraphics[scale=1.2]{micro}
 				\caption{Een microfoon vormt de luchtdrukgolf (eenheid: Pascal) om in een spanningsgolf (eenheid: Volt), een luidspreker doet het omgekeerde.}
 				\label{fig:micro}
 			\end{figure}
 
-			Om de muziek te kunnen horen moeten we de spanningsgolf terug omzetten naar een luchtdrukgolf, en daarvoor gebruiken we een luidspreker, die exact het omgekeerde doet van een microfoon. Om luid muziek te kunnen afspelen, moet er veel energie gepompt worden in de luidspreker. Anders gezegd moet het vermogen gebruikt door de luidspreker groot zijn. Dat is het  doel van een versterker: het vermogen van de muziek groot maken! Nu dat we weten waarom ons netwerk nuttig is, kunnen we aan de bouw van onze versterker beginnen! Het ontwerpen van een versterker is, zoals je het zult zien, vooral het kiezen van veel weerstandswaarden.
+			Om de muziek te kunnen horen moeten we de spanningsgolf terug omzetten naar een luchtdrukgolf, en daarvoor gebruiken we een luidspreker, die exact het omgekeerde doet van een microfoon. Om luid muziek te kunnen afspelen, moet er veel energie gepompt worden in de luidspreker. Anders gezegd moet het vermogen gebruikt door de luidspreker groot zijn. Dat is het  doel van een versterker: het vermogen van de muziek groot maken! Nu dat we weten waarom ons netwerk nuttig is, kunnen we aan de bouw van onze versterker beginnen! Het ontwerpen van een versterker is, zoals je het zult zien, gewoon het kiezen van enkele weerstandswaarden.
 
 		\subsection{De volumeknop: de spanningsdeler}
 
-			We hebben de muziek dus omgevormd naar een spanningssignaal. Stel dat $V_s$ ons muzieksignaal is, en dat we in serie met die spanningsbron twee weerstanden schakelen (figuur \ref{fig:volume}), dan hebben we een zogenaamde \textbf{spanningsdeler} gebouwd. We gaan aantonen de spanning $V_2$ een verkleinde versie is van het muzieksignaal $V_s$. Dit is handig als het geluid te luid is, en dat we het volume willen regelen.
+			We hebben de muziek dus omgevormd naar een spanningssignaal. Stel dat $V_s$ ons muzieksignaal is, en dat we in serie met die spanningsbron twee weerstanden schakelen (figuur \ref{fig:volume}), dan hebben we een zogenaamde \textbf{spanningsdeler} gebouwd. We gaan aantonen de spanning $V_1$ een verkleinde versie is van het muzieksignaal $V_s$. Dit is handig als het geluid te luid is, en dat we het volume willen regelen.
 
 			\begin{figure}[htbp]
 				\centering
@@ -358,7 +416,7 @@
 
 			\begin{DIY} Vind nu, dankzij de vier vorige vergelijkingen, de uitdrukking voor de spanning $V_2$ in functie van $V_s$, $R_1$ en $R_2$. Omdat we alleen de spanningsverhouding willen weten, mogen er geen stromen voorkomen in de formule.
 			\begin{align*}
-			    V_2 = \ldots\ldots
+			    V_1 = \ldots\ldots
 			\end{align*}
 			\end{DIY}
 			Je kan zien dat de spanning $V_2$, die we de uitgangsspanning noemen, altijd kleiner is dan (of gelijk aan) de ingangsspanning $V_s$. Daarom noemen we dit een spanningsdeler.
@@ -366,12 +424,13 @@
 			\begin{align*}
 			    R_2 = \ldots\ldots
 			\end{align*}
+			Let op! Bestaat die weerstandswaarde wel? Kies een bestaande waarde uit de E12-reeks in figuur \ref{fig:e12} op pagina \pageref{fig:e12}.
 			\end{DIY}
 			In de praktijk wordt een spanningsdeler vaak met een regelbare weerstand gemaakt (zie figuur \ref{subfig:regelbareR}), zodat de verhouding tussen de in- en uitgangsspanning kan veranderd worden. In figuur \ref{subfig:pot} zie je een \textbf{potentiometer}, dat is een regelbare spanningsdeler. Het is een regelbare weerstand die je in het midden kan aftakken, en dat vormt de spanningsdeler.
 
 			We gaan een potentiometer gebruiken als volumeknop! Omdat je een potentiometer volledig kunt toe- of opendraaien, maak de grootte van de weerstand niets uit voor de spanningsverhouding. Maar wat wel belangrijk is, is dat er niet te veel stroom door de potentiometer vloeit, want anders wordt er vermogen gebruikt door de volumeknop en gaan onze batterij zeer snel plat zijn. 
 
-			\begin{DIY} Welke weerstand $R_{pot}$ moet de potentiometer hebben, wetend dat de ingangsspanning $V$ maximaal $200$ mV ( = $200 \cdot 10^{-3}$ V)is en we het vermogen $P$ willen beperken tot 4 $\mu$W ( = $4 \cdot 10^{-6}$ W)? \textbf{Tip:} De formule voor elektrisch vermogen kan je vinden op pagina \pageref{eq:vermogen},  je hebt de wet van Ohm ook nodig.
+			\begin{DIY} Welke weerstand $R_{pot}$ moet de potentiometer hebben, wetend dat de ingangsspanning $V$ maximaal $200$ mV ( = $200 \cdot 10^{-3}$ V) is en we het vermogen $P$ willen beperken tot 4 $\mu$W ( = $4 \cdot 10^{-6}$ W)? \textbf{Tip:} De formule voor elektrisch vermogen kan je vinden op pagina \pageref{eq:vermogen},  je hebt de wet van Ohm ook nodig.
 			\begin{align*}
 			    R_{pot} = \ldots\ldots
 			\end{align*}
@@ -398,14 +457,14 @@
 			\end{figure}
 
 		\subsection{Het statusledje: de diode}
-			Een handig onderdeel op veel elektronische toestellen is het ledje dat brandt om aan te geven dat het toestal aan is. LED staat voor Light Emitting Diode, lichtgevende diode\footnote{Niet alle diodes zijn lichtgevend, diodes zijn ook van nut voor andere toepassingen.}. Een diode (figuur \ref{fig:diode}) is een heel belangrijke en nuttige elektronische component, die alleen stroom doorlaat in \'e\'en richting.
+			Een handig onderdeel op veel elektronische toestellen is het ledje dat brandt om aan te geven dat het toestal aan is. LED staat voor Light Emitting Diode, lichtgevende diode\footnote{Niet alle diodes zijn lichtgevend, diodes zijn ook van nut voor andere toepassingen.}. Een diode (figuur \ref{fig:diode}) is een heel belangrijke en nuttige elektronische component, die alleen stroom doorlaat in \'e\'en richting. Het waterequivalent is eenvoudigweg een \'e\'enrichtingsklep.
 
 			\begin{figure}[htbp]
 			\centering
 				\begin{subfigure}[b]{0.45\linewidth}
 					\centering
 					\includegraphics{diode}
-					\caption{Een diode met voorwaartse spanning $U_D$ en stroom $I_D$. De diode laat alleen stroom toe in de  positieve stroomrichting (richting van de stroompijl).}
+					\caption{Een diode met voorwaartse spanning $U_D$ en stroom $I_D$. De diode laat alleen stroom toe in de  positieve stroomrichting , van de anode (+) naar de kathode (-).}
 					\label{fig:diode}
 				\end{subfigure}
 				~
@@ -418,14 +477,14 @@
 				\caption{De Diode}
 			\end{figure}
 
-			In figuur \ref{fig:diode_grafiek} zie je de grafiek van de stroom in functie van de spanning van de diode die we gaan gebruiken in onze versterker. In tegenstelling met de weerstand is de fysische wet van de diode niet-lineair (= het is geen rechte), het is een exponenti\"ele functie. 
+			In figuur \ref{fig:diode_grafiek} zie je de grafiek van de stroom in functie van de spanning van de diode die we gaan gebruiken in onze versterker. In tegenstelling met de weerstand is de fysische wet van de diode niet-lineair (= het is geen rechte): het is een exponenti\"ele functie. Als je het voltage verdubbelt over de diode, gaat de stroom niet verdubellen, maar exponentiëel groter worden.
 				\begin{figure}[htbp]
 					\centering
 					\includegraphics{diode_grafiek}
 					\caption{Grafiek van de stroom in functie van de spanning van een diode.}
 					\label{fig:diode_grafiek}
 				\end{figure}
-			Omdat rekenen met een exponenti\"ele functie onhandig is, gaat een ingenieursstudent meestal eerst proberen om zich te redden met de grafiek. We gaan het circuit in figuur \ref{fig:diode_netwerk} oplossen zonder de die moeilijke functie te gebruiken.
+			Omdat rekenen met een exponenti\"ele functie onhandig is, gaat een ingenieur meestal eerst proberen om zich te redden met de grafiek. We gaan het circuit in figuur \ref{fig:diode_netwerk} oplossen zonder de die moeilijke functie te gebruiken.
 
 			\begin{figure}[htbp]
 				\centering
@@ -446,19 +505,19 @@
 			\end{align*}
 			\end{DIY}
 
-			Om de aan/uit LED effectief te laten werken gaan we een schakelaar tussen de bron en de diode zetten zodat het licht alleen brandt wanneer het toestal aan is.
+			Om het statusledje effectief te laten werken gaan we een schakelaar tussen de bron en de diode zetten zodat het licht alleen brandt wanneer het toestal aan is.
 
 		\subsection{De versterker: de transistor}
-			De transistor is een actieve elektronische component uitgevonden in $1947$, en is het baisingredi\"ent van alle elektronische netwerken, van simpele versterkers tot een volledige PC. In tegenstelling met passieve componenten zoals de diode en de weerstand hebben actieve componenten nood aan een voeding, een externe energiebron die nodig is om ze te laten werken. Ze kunnen dankzij die extra energiebron (zoals een batterij) energie inpompen in een netwerk, en zijn dus handig voor versterking.
+			De transistor is een actieve elektronische component uitgevonden in $1947$, en is het baisingredi\"ent van alle elektronische netwerken, van simpele versterkers tot een volledige PC. In tegenstelling tot passieve componenten zoals de diode en de weerstand hebben actieve componenten nood aan een voeding, een externe energiebron die nodig is om ze te laten werken. Ze kunnen dankzij die extra energiebron (zoals een batterij) energie inpompen in een netwerk, en zijn dus handig voor versterking.
 
-			In figuur \ref{fig:watertransistor} zie je een water-transistor, waarmee de werking van een transistor gaat uitgelegd worden. \begin{figure}[htbp]
+			\begin{figure}[htbp]
 				\centering
 				\includegraphics[width=0.3\textwidth]{watertransistor}
 				\caption{Hydraulische analogie van de transistor.}
 				\label{fig:watertransistor}
 			\end{figure}
 
-			De water-transistor werkt als volgt: als er geen stroom vloeit in de basis (B), dan sluit het ventiel het contact tussen collector (C) en emitter (E), er loopt geen stroom door de transistor. Een kleine stroom in de basis drukt het ventiel naar boven, en er kan een grote stroom lopen van de collector naar de emitter. Een kleine stroom veroorzaakt dus een grote stroom, en dat is het principe van de versterkerwerking van een transistor! Er is wel een externe energiebron nodig om die grote stroom te kunnen blijven leveren, bij de watertransistor zou dat een watertoren kunnen zijn dat aangesloten is aan de connector.
+			We gaan de werking van de transistor uitleggen met zijn waterequivalent (figuur \ref{fig:watertransistor}). De watertransistor werkt als volgt: als er geen stroom vloeit in de basis (B), dan sluit het ventiel het contact tussen collector (C) en emitter (E), er loopt geen stroom door de transistor. Een kleine stroom in de basis drukt het ventiel naar boven, en er kan een grote stroom lopen van de collector naar de emitter. Een kleine stroom veroorzaakt dus een grote stroom, en dat is het principe van de versterkerwerking van een transistor! Er is wel een externe energiebron nodig om die grote stroom te kunnen blijven leveren, bij de watertransistor zou dat een watertoren kunnen zijn dat aangesloten is aan de collector.
 
 			
 			\subsubsection{De bipolaire npn transistor}
@@ -504,7 +563,7 @@
 					    I_C = \beta I_B
 					    \label{eq:hfe}
 					\end{align}
-					$\beta$ (ook als $h_{FE}$ genoteerd) wordt de stroomversterkingsfactor genoemd, en is typisch groter dan $50$, en kan soms $800$ gaan. Dit is waarom de nuttig is: een minuscuul kleine basisstroom controleert een veel grotere collectorstroom.
+					$\beta$ (ook als $h_{FE}$ genoteerd) wordt de stroomversterkingsfactor genoemd, en is typisch ten minste $50$, maar kan veel grotee zijn. Dit is waarom de transistor nuttig is: een minuscuul kleine basisstroom controleert een veel grotere collectorstroom.
 
 				\end{enumerate}
 
@@ -524,7 +583,7 @@
 				Een negatieve stroom is perfect mogelijk, dat wilt gewoon zeggen dat de stroom loopt tegen de pijlrichting in van figuur \ref{subfig:transistor_vi}. We zijn nu gereed om een versterkerschakeling op te lossen!
 
 			\subsubsection{Het versterkingsnetwerk}
-				In figuur \ref{fig:ges} vind je een audio-versterker, waar je de bipolaire transistor in herkent. Je ziet dat we een actief netwerk hebben, er is een externe energiebron: de batterij $V_{CC}$. Je hebt dan de muziek de we gaan versterken in de spanningsbron $V_S$.
+				In figuur \ref{fig:ges} vind je een audioversterker, waar je de bipolaire transistor in herkent. Je ziet dat we een actief netwerk hebben, er is een externe energiebron: de batterij $V_{CC}$. Je hebt de muziek die we gaan versterken in de spanningsbron $V_S$.
 
 				\begin{figure}[htbp]
 					\centering
@@ -582,12 +641,12 @@
 
 				\begin{figure}[htbp]
 					\centering
-					\includegraphics{golven}
+					\includegraphics[width=\linewidth]{golven}
 					\caption{De ingangsgolf wordt door ons netwerk omgedraaid, versterkt, en het gemiddelde verschuift.}
 					\label{fig:golven}
 				\end{figure}
 
-				We gaan nu een ontwerp methode volgen waar verschillende keuzes moeten gemaakt worden, waaruit de waardes voor de weerstanden uit volgen. Eens je de methode kent, kan je andere keuzes proberen maken en zien als het werkt: dit is wat ontwerpen is! Niet alle designers gaan het graag zeggen, maar een groot deel van ontwerp is vallen en opstaan: uitproberen tot dat het werkt. En daar is niets mis mee (als je maar niets opblaast)!
+				We gaan nu een ontwerp methode volgen waar verschillende keuzes moeten gemaakt worden, waaruit de waardes voor de weerstanden uit volgen. Eens je de methode kent, kan je andere keuzes proberen maken en zien als het werkt: dit is wat ontwerpen is. Niet alle designers gaan het graag zeggen, maar een groot deel van ontwerp is vallen en opstaan: uitproberen tot dat het werkt, en daar is niets mis mee!
 
 				De methode gaat als volgt:
 				\begin{enumerate}
@@ -621,6 +680,7 @@
 
 				\begin{DIY} Bereken het biasvoltage $V_B$. Kies dan de weerstand $R_2$ zodat $V_B$ de gewenste waarde heeft. Het staat al vast dat $R_1 = 1k\Omega$. \textbf{Tip:} Herinner U dat $V_{CC} = 9V$ en de formule van de weerstandsdeler.
 				\begin{align}
+					V_B &= \ldots \\
 				    R_1 &= 1k\Omega \\
 				    R_2 &= \ldots
 				\end{align}
@@ -636,19 +696,19 @@
 				 De stroom en de spanning zijn  versterkt, dus het vermogen is gestegen! We zijn vertrokken van enkele $\mu$W en we hebben nu uiteindelijk enkele $m$W. 
 
 
-				\begin{center}
-					\noindent \fbox{ 
-						\parbox{0.8\textwidth}{
-							Samenvatting van de gekozen weerstanden:
-							\begin{align*}
-							    R_1 &= \ldots \\
-							    R_2 &= \ldots \\
-							    R_E &= \ldots \\
-							    R_C &= \ldots
-							\end{align*}
-						}
-					 }
-				\end{center}
+%				\begin{center}
+%					\noindent \fbox{ 
+%						\parbox{0.8\textwidth}{
+%							Samenvatting van de gekozen weerstanden:
+%							\begin{align*}
+%							    R_1 &= \ldots \\
+%							    R_2 &= \ldots \\
+%							    R_E &= \ldots \\
+%							    R_C &= \ldots
+%							\end{align*}
+%						}
+%					 }
+%				\end{center}
 
 		\subsection{De magische zwarte doos: de ge\"integreerde schakeling}
 			Dankzij de transistor-schakeling hebben we meer vermogen, maar een luidspreker heeft enkele honderden milliwatts nodig om luid genoeg te klinken, dat is meer dan enkele milliwatts we nu hebben! We gaan dus het signaal nog eens versterken.
@@ -702,12 +762,12 @@
 			In de datasheet van de LM386 zit  een belangrijke informatie: de output van de schakeling is een spanningsgolf met maximale amplitude van $3~V$, een een DC-waarde (gemiddelde) gelijk aan $0~V$.
 			Dat wilt dus zeggen dat een la bijvoorbeeld kan versterkt worden tot:
 			\begin{align}
-				V(t) = 3~V \cdot \sin (440~\text{Hz} \cdot t) \\
+				V(t) = 3~V \cdot \sin (2\pi \cdot 440~\text{Hz} \cdot t) \\
 			\end{align}
 
 			De stroom door de versterker is dan 
 				\begin{align}
-				I(t) = \frac{3~V}{8~\Omega} \cdot \sin (440~\text{Hz} \cdot t) \\
+				I(t) = \frac{3~V}{8~\Omega} \cdot \sin (2\pi \cdot 440~\text{Hz} \cdot t) \\
 			\end{align}
 
 			Het vermogen is dan
@@ -731,9 +791,14 @@
 			%\end{align}
 
 			Niet alle elektrische energie  wordt omgevormd naar geluidsgolven, veel wordt spijtig genoeg verloren als warmte. Maar zoals je het zelf gaat merken, komt er toch een goed volume uit de luidspreker voor een draagbare speaker.
-	\section{Conclusie}
 
-		In figuur \ref{fig:volledig_schema} zie je het volledig elektronisch schema van de versterker. Je herkent de twee trappen: de transistor versterker als eerste stap, het IC-circuit als tweede stap. 
+			Dit be\"eindigt het ontwerp. We hebben gezien dat met enkele wiskundige regels en wat denkwerk, een volledig elektronisch circuit kan ontworpen vanaf simpele componenten. Als je dit een leuke ervaring vond, zijn ingenieursstudies misschien iets voor jou. Je kan online nog veel circuits vinden om zelf te maken!
+			Het circuit moet nu nog alleen gebouwd worden. Op de volgende pagina vind je het volledig circuit. 
+\begin{landscape}
+	
+\section{Overzicht}
+
+		In figuur \ref{fig:volledig_schema} zie je het volledig elektronisch schema van de versterker. Je herkent de twee trappen: de transistorversterker als eerste stap, het IC-circuit als tweede stap. 
 		\begin{figure}[htbp]
 			\centering
 			\includegraphics[width=\linewidth]{volledig_schema}
@@ -742,7 +807,8 @@
 		\end{figure}
 		$C_1$ en $C_2$ zijn ontkoppelcapaciteiten dienen om DC signalen te blokkeren, $C_5$ werkt als een hulpbatterij.
 
-		Als snelle referentie vind je hier mogelijke componentwaarden die leiden tot een werkende versterker.
+		Je kan nu zelf de waarden die je hebt gevonden tijdens het project invullen in het schema. Let wel op dat niet alle weerstandswaarden worden gemaakt, kies waarden die bestaan en die in het labo beschikbaar zijn.
+		Als snelle referentie vind je hier voorbeeldwaarden die leiden tot een werkende versterker.
 
 		\begin{center}
 			\noindent \fbox{ 
@@ -757,21 +823,20 @@
 			 }
 		\end{center}
 
-		De waardes van de capaciteiten zijn:
-		\begin{center}
-			 			\noindent \fbox{ 
-				\parbox{0.8\textwidth}{
-					\begin{align*}
-						C_1 &= 1~\mu F & C_2 &= 42 ~\mu F \\
-						C_3 &= 100~nF & C_4 &= 220~ \mu F \\
-						C_5 &= 330~\mu F
-					\end{align*}
-				}
-			 }
-		\end{center}
-
-		Dit be\"eindigt het ontwerp. We hebben gezien dat met enkele wiskundige regels en wat denkwerk, een volledig elektronisch circuit kan ontworpen vanaf simpele componenten. Als je dit een leuke ervaring vond, zijn ingenieursstudies misschien iets voor jou. Je kan online nog veel circuits vinden om zelf te maken!
-		Het circuit moet nu nog alleen gebouwd worden. Aan de slag! 
+%		De waardes van de capaciteiten zijn:
+%		\begin{center}
+%			 			\noindent \fbox{ 
+%				\parbox{0.8\textwidth}{
+%					\begin{align*}
+%						C_1 &= 1~\mu F & C_2 &= 42 ~\mu F \\
+%						C_3 &= 100~nF & C_4 &= 220~ \mu F \\
+%						C_5 &= 330~\mu F
+%					\end{align*}
+%				}
+%			 }
+%		\end{center}
+\end{landscape}
+	
 		
 
 	%\subsection{ De BOX is belangrijk }
