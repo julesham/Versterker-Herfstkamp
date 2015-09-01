@@ -6,8 +6,8 @@
 \newif\ifoplossing
 
 % Comment to choose between versions
-%\oplossingfalse
-\oplossingtrue
+\oplossingfalse
+%\oplossingtrue
 
 
 \ifoplossing
@@ -291,21 +291,52 @@
 
 			\end{DIY}
 
-			\begin{DIY} 	
-			~\vspace*{20ex}
-				\begin{align}
-				    R_C &= \ldots \\
-				    R_E &= \ldots
-				\end{align}
+			\begin{DIY} 
+
+				\ifoplossing
+					\begin{align}
+						R_C &= \frac{ V_{R_C}}{I_{R_C}} = \frac{V_{CC}-V_C}{I_C}= \frac{9V - 3.5V}{10mA} = 550 \Omega \\
+						R_E &= \frac{R_C}{5} = 110 \Omega 
+						\intertext{Weerstanden in E12 series:}
+						R_C &= 560 \Omega\\
+						R_E &= 100 \Omega
+					\end{align}
+		   		\else
+					~\vspace*{20ex}
+					\begin{align}
+					    R_C &= \ldots \\
+					    R_E &= \ldots
+					\end{align}
+				\fi
 			\end{DIY}	
 
+
 			\begin{DIY} 
-			~\vspace*{20ex}
-				\begin{align}
-					V_B &= \ldots \\
-				    R_1 &= 1k\Omega \\
-				    R_2 &= \ldots
-				\end{align}
+
+				\ifoplossing
+					\begin{align*}
+					\intertext{Biasvoltage:}
+					    V_B &= V_E + 0.7V = R_E \cdot (-I_E) = 100 \Omega \cdot 10 mA  + 0.7V = 1.7V
+					\intertext{Weerstandsdeler:}
+					    V_B &= \frac{R_1}{R_1+R_2}V_{CC} \\
+					    \frac{V_B}{V_{CC}} &= \frac{R_1}{R_1+R_2} \\
+					    \frac{V_{CC}}{V_B} &= \frac{R_1+R_2}{R_1} \\
+					    \frac{V_{CC}}{V_B} \cdot R_1 - R_1 &= R_2 \\
+					    \frac{9V}{1.7V} \cdot 1k\Omega - 1k\Omega &= R_2 \\
+					    R_2 &= 5.29 \cdot 1k\Omega -  1k\Omega \\
+					    R_2 &= 4.29 k\Omega\\
+					    \intertext{weerstand in de E12-serie, een beetje groter genomen om stroom te beperken}
+					    R_2 &= 4.8 k\Omega
+					\end{align*}
+				\else
+					~\vspace*{20ex}
+					\begin{align}
+						V_B &= \ldots \\
+					    R_1 &= 1k\Omega \\
+					    R_2 &= \ldots
+					\end{align}
+				\fi
+				
 			\end{DIY}	
 
 

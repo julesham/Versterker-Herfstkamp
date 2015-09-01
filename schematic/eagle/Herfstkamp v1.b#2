@@ -1785,7 +1785,10 @@ Your Eurocircuits Team
 <attribute name="NAME" x="55.387" y="62.464" size="1.27" layer="25" ratio="10"/>
 <attribute name="VALUE" x="54.073" y="56.513" size="1.27" layer="27" ratio="10" rot="R270"/>
 </element>
-<element name="C5" library="resistor" package="E3,5-8" value="" x="14.737" y="70.633" rot="R90"/>
+<element name="C5" library="resistor" package="E3,5-8" value="" x="14.737" y="70.633" smashed="yes" rot="R90">
+<attribute name="NAME" x="9.943" y="70.435" size="1.27" layer="25" ratio="10" rot="R90"/>
+<attribute name="VALUE" x="17.785" y="68.347" size="1.27" layer="27" ratio="10" rot="R90"/>
+</element>
 <element name="LM386N-1" library="linear" package="DIL08" value="LM386N-1" x="43.88" y="64.24" smashed="yes" rot="R270">
 <attribute name="NAME" x="44.526" y="60.059" size="1.27" layer="25" ratio="10" rot="R90"/>
 <attribute name="VALUE" x="43.245" y="67.796" size="1.27" layer="27" ratio="10" rot="R270"/>

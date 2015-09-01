@@ -1920,7 +1920,7 @@ Your Eurocircuits Team
 <contactref element="LM386N-1" pad="2"/>
 <contactref element="U$2" pad="GROUND"/>
 <contactref element="POTENTIOMETER" pad="1GROUND"/>
-<polygon width="1" layer="16" isolate="0.508">
+<polygon width="1" layer="16" isolate="0.508" orphans="yes">
 <vertex x="0" y="75"/>
 <vertex x="60" y="75"/>
 <vertex x="60" y="-2"/>

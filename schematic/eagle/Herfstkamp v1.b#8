@@ -1828,7 +1828,7 @@ Your Eurocircuits Team
 </element>
 <element name="U$1" library="Batteryholder9v" package="BAT_HOLDER_9V" value="BATTERY_HOLDER9V" x="5.4" y="5.4"/>
 <element name="U$2" library="JackSocket" package="JACKSOCKET35RAPC4BHN2" value="INPUTJACK" x="3.8" y="54.7"/>
-<element name="U$3" library="Potentiometeralps" package="POTENTIOMETERALPS" value="POTENTIOMETERALPS" x="40.3" y="53.6" rot="R180"/>
+<element name="POTENTIOMETER" library="Potentiometeralps" package="POTENTIOMETERALPS" value="" x="40.3" y="53.6" rot="R180"/>
 <element name="LUIDSPREKER" library="con-phoenix-508" package="MKDSN1,5/2-5,08" value="" x="53" y="46" smashed="yes" rot="R90">
 <attribute name="NAME" x="59.055" y="39.7489" size="1.27" layer="25" font="vector" rot="R90"/>
 <attribute name="VALUE" x="56.81" y="52.985" size="1.27" layer="27" font="vector" rot="R180"/>
@@ -1914,7 +1914,7 @@ Your Eurocircuits Team
 <contactref element="U$1" pad="NEG"/>
 <contactref element="LM386N-1" pad="2"/>
 <contactref element="U$2" pad="GROUND"/>
-<contactref element="U$3" pad="1GROUND"/>
+<contactref element="POTENTIOMETER" pad="1GROUND"/>
 <polygon width="1" layer="16" isolate="0.508">
 <vertex x="0" y="75"/>
 <vertex x="60" y="75"/>
@@ -1945,17 +1945,16 @@ Your Eurocircuits Team
 </signal>
 <signal name="N$4">
 <contactref element="C2" pad="2"/>
-<contactref element="U$3" pad="3VCC"/>
-<wire x1="35.3" y1="62.6" x2="35.3" y2="53.6" width="1.27" layer="16"/>
-<wire x1="35.3" y1="62.6" x2="35.24" y2="62.74" width="0" layer="19" extent="16-16"/>
+<contactref element="POTENTIOMETER" pad="3VCC"/>
+<wire x1="35.24" y1="62.74" x2="35.24" y2="53.66" width="1.27" layer="16"/>
+<wire x1="35.24" y1="53.66" x2="35.3" y2="53.6" width="1.27" layer="16"/>
 </signal>
 <signal name="N$8">
-<contactref element="U$3" pad="2VAR"/>
+<contactref element="POTENTIOMETER" pad="2VAR"/>
 <contactref element="LM386N-1" pad="3"/>
-<wire x1="37.8" y1="53.6" x2="37.8" y2="61.9" width="1.27" layer="16"/>
-<wire x1="37.8" y1="61.9" x2="38.9" y2="63" width="1.27" layer="16"/>
-<wire x1="38.9" y1="63" x2="40.1" y2="63" width="1.27" layer="16"/>
-<wire x1="40.1" y1="63" x2="40.07" y2="62.97" width="0" layer="19" extent="16-16"/>
+<wire x1="40.07" y1="62.97" x2="38.97" y2="62.97" width="1.27" layer="16"/>
+<wire x1="38.97" y1="62.97" x2="37.8" y2="61.8" width="1.27" layer="16"/>
+<wire x1="37.8" y1="61.8" x2="37.8" y2="53.6" width="1.27" layer="16"/>
 </signal>
 <signal name="N$13">
 <contactref element="U$2" pad="2LEFT"/>
